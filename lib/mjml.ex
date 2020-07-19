@@ -8,10 +8,19 @@ defmodule Mjml do
   @doc """
   Converts an MJML string to HTML content.
 
+  (Passing any options – which the underlying mrml Rust crate already handles – is not yet implemented.)
+
+  Returns a result tuple:
+  - `{:ok, html}` for a successful MJML transpiling
+  - `{:error, message}` for a failed MJML transpiling
+
   ## Examples
 
       iex> Mjml.to_html("<mjml><mj-head></mj-head></mjml>")
-      "<!doctype html><html xmlns=..."
+      {:ok, "<!doctype html><html xmlns=..."}
+
+      iex> Mjml.to_html("something not MJML")
+      {:error, "Couldn't convert MJML template"}
 
   """
   def to_html(_mjml), do: error()

@@ -1,6 +1,8 @@
 defmodule Mjml.MixProject do
   use Mix.Project
 
+  @github_url "https://github.com/paulgoetze/mjml_nif"
+
   def project do
     [
       app: :mjml,
@@ -9,6 +11,12 @@ defmodule Mjml.MixProject do
       start_permanent: Mix.env() == :prod,
       compilers: [:rustler] ++ Mix.compilers(),
       rustler_crates: [mjml_nif: []],
+      name: "mjml",
+      description: description(),
+      source_url: @github_url,
+      homepage_url: @github_url,
+      package: package(),
+      docs: docs(),
       deps: deps()
     ]
   end
@@ -23,7 +31,8 @@ defmodule Mjml.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:rustler, "~> 0.22-rc"}
+      {:rustler, "~> 0.22-rc"},
+      {:ex_doc, "~> 0.18", only: :dev, runtime: false}
     ]
   end
 
@@ -33,8 +42,18 @@ defmodule Mjml.MixProject do
 
   defp package() do
     [
+      maintainers: ["Paul Götze"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/paulgoetze/mjml_nif"}
+      files: ~w(lib .formatter.exs mix.exs README* readme* LICENSE*
+                license* CHANGELOG* changelog* src),
+      links: %{"GitHub" => @github_url}
+    ]
+  end
+
+  defp docs() do
+    [
+      main: "readme",
+      extras: ["README.md"]
     ]
   end
 end

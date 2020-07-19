@@ -1,5 +1,8 @@
 # MJML (Rust NIFs for Elixir)
 
+[![Hex version badge](https://img.shields.io/hexpm/v/mjml.svg)](https://hex.pm/packages/mjml)
+[![License badge](https://img.shields.io/hexpm/l/mjml.svg)](https://github.com/paulgoetze/mjml/blob/main/LICENSE.md)
+
 Native Implemented Function (NIF) bindings for the [MJML](https://mjml.io) Rust implementation ([mrml](https://github.com/jdrouet/mrml)).
 
 ## Installation
@@ -14,9 +17,18 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/mjml](https://hexdocs.pm/mjml).
+## Usage
+
+Transpile MJML templates to HTML with: 
+
+```elixir
+mjml = "<mjml>...</mjml>"
+{:ok, html} = Mjml.to_html(mjml)
+
+# For an invalid MJML template:
+mjml = "something not MJML"
+{:error, message} = Mjml.to_html(mjml)
+```
 
 ## License
 
