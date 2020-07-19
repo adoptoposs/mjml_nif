@@ -1,0 +1,4 @@
+%{
+  "rustler": {:hex, :rustler, "0.22.0-rc.0", "d8a3d72862874d6c5a5c6421617911e8a2822a310b6e6d3ceb16803c2651350f", [:mix], [{:toml, "~> 0.5.2", [hex: :toml, repo: "hexpm", optional: false]}], "hexpm", "0548ae8fd203bbd3c5ba689e60d827a1991e12cde599fb4c03d4cf56b00a3352"},
+  "toml": {:hex, :toml, "0.5.2", "e471388a8726d1ce51a6b32f864b8228a1eb8edc907a0edf2bb50eab9321b526", [:mix], [], "hexpm", "f1e3dabef71fb510d015fad18c0e05e7c57281001141504c6b69d94e99750a07"},
+}
