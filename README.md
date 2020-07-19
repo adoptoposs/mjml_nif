@@ -1,7 +1,7 @@
 # MJML (Rust NIFs for Elixir)
 
 [![Hex version badge](https://img.shields.io/hexpm/v/mjml.svg)](https://hex.pm/packages/mjml)
-[![License badge](https://img.shields.io/hexpm/l/mjml.svg)](https://github.com/paulgoetze/mjml/blob/main/LICENSE.md)
+[![License badge](https://img.shields.io/hexpm/l/mjml.svg)](https://github.com/paulgoetze/mjml_nif/blob/main/LICENSE.md)
 
 Native Implemented Function (NIF) bindings for the [MJML](https://mjml.io) Rust implementation ([mrml](https://github.com/jdrouet/mrml)).
 
