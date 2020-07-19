@@ -26,4 +26,15 @@ defmodule Mjml.MixProject do
       {:rustler, "~> 0.22-rc"}
     ]
   end
+
+  defp description() do
+    "NIF bindings for the MJML Rust implementation (mrml)"
+  end
+
+  defp package() do
+    [
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/paulgoetze/mjml_nif"}
+    ]
+  end
 end

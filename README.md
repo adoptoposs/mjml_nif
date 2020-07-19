@@ -1,11 +1,10 @@
-# Mjml
+# MJML (Rust NIFs for Elixir)
 
-**TODO: Add description**
+Native Implemented Function (NIF) bindings for the [MJML](https://mjml.io) Rust implementation ([mrml](https://github.com/jdrouet/mrml)).
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `mjml` to your list of dependencies in `mix.exs`:
+The package can be installed by adding `mjml` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -18,4 +17,10 @@ end
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/mjml](https://hexdocs.pm/mjml).
+
+## License
+
+Copyright (c) 2020, Paul Götze
+
+This software is licensed under the [MIT License](https://github.com/paulgoetze/mjml_nif/blob/main/LICENSE.md).
 
