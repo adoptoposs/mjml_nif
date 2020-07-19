@@ -44,8 +44,7 @@ defmodule Mjml.MixProject do
     [
       maintainers: ["Paul Götze"],
       licenses: ["MIT"],
-      files: ~w(lib .formatter.exs mix.exs README* readme* LICENSE*
-                license* CHANGELOG* changelog* src),
+      files: ~w(lib native .formatter.exs README* LICENSE* mix.exs),
       links: %{"GitHub" => @github_url}
     ]
   end
