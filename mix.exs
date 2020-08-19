@@ -1,7 +1,7 @@
 defmodule Mjml.MixProject do
   use Mix.Project
 
-  @github_url "https://github.com/paulgoetze/mjml_nif"
+  @github_url "https://github.com/adoptoposs/mjml_nif"
 
   def project do
     [
