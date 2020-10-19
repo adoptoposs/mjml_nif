@@ -30,6 +30,14 @@ mjml = "something not MJML"
 {:error, message} = Mjml.to_html(mjml)
 ```
 
+## Contributing
+
+We encourage you to contribute to mjml_nif. 
+Please check our [CONTRIBUTING.md](https://github.com/adoptoposs/mjml_nif/blob/main/CONTRIBUTING.md) guides for more information. 
+
+This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to our [CODE_OF_CONDUCT.md](https://github.com/adoptoposs/mjml_nif/blob/main/CODE_OF_CONDUCT.md).
+
+
 ## License
 
 Copyright (c) 2020, Paul Götze
