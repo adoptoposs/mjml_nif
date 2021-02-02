@@ -42,7 +42,7 @@ This project is intended to be a safe, welcoming space for collaboration, and co
 
 ## License
 
-Copyright (c) 2020, Paul Götze
+Copyright (c) 2020-2021, Paul Götze
 
 This software is licensed under the [MIT License](https://github.com/adoptoposs/mjml_nif/blob/main/LICENSE.md).
 
