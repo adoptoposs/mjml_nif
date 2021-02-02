@@ -7,6 +7,8 @@ Native Implemented Function (NIF) bindings for the [MJML](https://mjml.io) Rust 
 
 ## Installation
 
+In order to use the package you need to [install Rust](https://www.rust-lang.org/tools/install).
+
 The package can be installed by adding `mjml` to your list of dependencies in `mix.exs`:
 
 ```elixir
