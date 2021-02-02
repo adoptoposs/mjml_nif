@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Changed
-- Use [mrml] v0.4.0
+- Use [mrml] v0.5.0
 
 ### Fixed
 - Warning about special link args for x86_64-apple-darwin target
