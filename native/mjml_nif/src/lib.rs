@@ -10,9 +10,16 @@ mod atoms {
 
 #[rustler::nif]
 pub fn to_html<'a>(env: Env<'a>, mjml: String) -> NifResult<Term<'a>> {
-    return match mrml::to_html(&mjml, mrml::Options::default()) {
-        Ok(content) => Ok((atoms::ok(), content).encode(env)),
-        Err(_) => Ok((atoms::error(), "Couldn't convert MJML template").encode(env)),
+    return match mrml::parse(&mjml) {
+        Ok(root) => {
+            let options = mrml::prelude::render::Options::default();
+
+            return match root.render(&options) {
+                Ok(content) => Ok((atoms::ok(), content).encode(env)),
+                Err(error) => Ok((atoms::error(), error.to_string()).encode(env)),
+            };
+        }
+        Err(error) => Ok((atoms::error(), error.to_string()).encode(env)),
     };
 }
 

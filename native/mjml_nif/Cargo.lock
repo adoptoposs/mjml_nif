@@ -40,7 +40,7 @@ checksum = "2448f6066e80e3bfc792e9c98bf705b4b0fc6e8ef5b43e5889aff0eaa9c58743"
 
 [[package]]
 name = "mjml_nif"
-version = "0.3.1"
+version = "1.0.0"
 dependencies = [
  "mrml",
  "rustler",
