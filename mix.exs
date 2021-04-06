@@ -6,7 +6,7 @@ defmodule Mjml.MixProject do
   def project do
     [
       app: :mjml,
-      version: "0.3.1",
+      version: "1.0.0",
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
       compilers: [:rustler] ++ Mix.compilers(),
