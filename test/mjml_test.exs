@@ -7,8 +7,14 @@ defmodule MjmlTest do
     assert String.starts_with?(html, "<!doctype html>")
   end
 
-  test "fails to transpile invalid MJML" do
-    mjml = "<mjml></br></mjml>"
-    assert {:error, _message} = Mjml.to_html(mjml)
+  test "fails to parse invalid MJML" do
+    assert {:error, message} = Mjml.to_html("<mjml><mjml>")
+    assert String.starts_with?(message, "unexpected element")
+
+    assert {:error, message} = Mjml.to_html("not MJML")
+    assert String.starts_with?(message, "parsing error: unknown token")
+
+    assert {:error, message} = Mjml.to_html("<mjml><///invalid-element></mjml>")
+    assert String.starts_with?(message, "parsing error: invalid element")
   end
 end
