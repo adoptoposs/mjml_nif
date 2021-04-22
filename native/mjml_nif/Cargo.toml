@@ -11,4 +11,4 @@ crate-type = ["dylib"]
 
 [dependencies]
 rustler = "0.22.0-rc.0"
-mrml = "1.0.0"
+mrml = "1.2.0"
