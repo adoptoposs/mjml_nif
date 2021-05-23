@@ -7,8 +7,8 @@ edition = "2018"
 [lib]
 name = "mjml_nif"
 path = "src/lib.rs"
-crate-type = ["dylib"]
+crate-type = ["cdylib"]
 
 [dependencies]
-rustler = "0.22.0-rc.0"
+rustler = "0.22.0-rc.1"
 mrml = "1.0.0"
