@@ -10,6 +10,12 @@ I.e. mjml_nif 0.x versions use mrml versions >= 0.1, < 1.0.0, and mjml_nif 1.x v
 
 ## [Unreleased]
 
+## [1.1.0] - 2021-05-23
+### Changed
+- Use [mrml] v1.2.2
+- Support OTP 24
+- mjml_nif crate type changed from "dylib" to "cdylib"
+
 ## [1.0.0] - 2021-04-07
 ### Changed
 - Use [mrml] v1.0.0
@@ -30,11 +36,11 @@ I.e. mjml_nif 0.x versions use mrml versions >= 0.1, < 1.0.0, and mjml_nif 1.x v
 ### Changed
 - Use [mrml] v0.3.3
 
-
 ## [0.1.0] – 2020-07-19
 Initial release
 
-[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/adoptoposs/mjml_nif/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/adoptoposs/mjml_nif/compare/v0.3.1...v1.0.0
 [0.3.1]: https://github.com/adoptoposs/mjml_nif/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/adoptoposs/mjml_nif/compare/v0.2.0...v0.3.0
