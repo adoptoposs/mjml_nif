@@ -2,6 +2,7 @@
 
 [![Hex version badge](https://img.shields.io/hexpm/v/mjml.svg)](https://hex.pm/packages/mjml)
 [![License badge](https://img.shields.io/hexpm/l/mjml.svg)](https://github.com/adoptoposs/mjml_nif/blob/main/LICENSE.md)
+[![Build Status](https://github.com/adoptoposs/mjml_nif/workflows/Tests/badge.svg)](https://github.com/adoptoposs/mjml_nif/workflows/Tests/badge.svg)
 
 Native Implemented Function (NIF) bindings for the [MJML](https://mjml.io) Rust implementation ([mrml](https://github.com/jdrouet/mrml)).
 
