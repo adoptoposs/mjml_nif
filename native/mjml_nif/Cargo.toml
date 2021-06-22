@@ -10,5 +10,5 @@ path = "src/lib.rs"
 crate-type = ["cdylib"]
 
 [dependencies]
-rustler = "0.22.0-rc.1"
+rustler = "0.22.0-rc.2"
 mrml = { version = "1.2", default-features = false, features = ["parse", "render"] }
