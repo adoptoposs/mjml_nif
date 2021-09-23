@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 For clarity, major releases of mjml_nif use the respective [mrml] releases with the same major release number.
-I.e. mjml_nif 0.x versions use mrml versions >= 0.1, < 1.0.0, and mjml_nif 1.x versions use mrml versions >= 1.0.0, < 2.0.0, etc.
+I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 1.x` versions use mrml versions `>= 1.0.0, < 2.0.0`, etc.
 
 ## [Unreleased]
 ### Changed

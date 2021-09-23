@@ -1,8 +1,11 @@
 # MJML (Rust NIFs for Elixir)
 
-[![Hex version badge](https://img.shields.io/hexpm/v/mjml.svg)](https://hex.pm/packages/mjml)
-[![License badge](https://img.shields.io/hexpm/l/mjml.svg)](https://github.com/adoptoposs/mjml_nif/blob/main/LICENSE.md)
 [![Build Status](https://github.com/adoptoposs/mjml_nif/workflows/Tests/badge.svg)](https://github.com/adoptoposs/mjml_nif/workflows/Tests/badge.svg)
+[![Module Version](https://img.shields.io/hexpm/v/mjml.svg)](https://hex.pm/packages/mjml)
+[![Hex Docs](https://img.shields.io/badge/hex-docs-lightgreen.svg)](https://hexdocs.pm/mjml/)
+[![Total Download](https://img.shields.io/hexpm/dt/mjml.svg)](https://hex.pm/packages/mjml)
+[![License](https://img.shields.io/hexpm/l/mjml.svg)](https://github.com/adoptoposs/mjml_nif/blob/master/LICENSE.md)
+[![Last Updated](https://img.shields.io/github/last-commit/adoptoposs/mjml_nif.svg)](https://github.com/adoptoposs/mjml_nif/commits/master)
 
 Native Implemented Function (NIF) bindings for the [MJML](https://mjml.io) Rust implementation ([mrml](https://github.com/jdrouet/mrml)).
 
@@ -22,7 +25,7 @@ end
 
 ## Usage
 
-Transpile MJML templates to HTML with: 
+Transpile MJML templates to HTML with:
 
 ```elixir
 mjml = "<mjml>...</mjml>"
@@ -46,8 +49,8 @@ Most Heroku buildpacks for Elixir do not come with Rust installed; you will need
 
 For example:
 ```bash
-heroku buildpacks:add -i 1 https://github.com/emk/heroku-buildpack-rust.git
-echo "RUST_SKIP_BUILD=1" > RustConfig
+$ heroku buildpacks:add -i 1 https://github.com/emk/heroku-buildpack-rust.git
+$ echo "RUST_SKIP_BUILD=1" > RustConfig
 ```
 
 ### Deploying with Docker
@@ -70,15 +73,15 @@ RUSTFLAGS='--codegen target-feature=-crt-static'
 
 ## Contributing
 
-We encourage you to contribute to mjml_nif. 
-Please check our [CONTRIBUTING.md](https://github.com/adoptoposs/mjml_nif/blob/main/CONTRIBUTING.md) guides for more information.
+We encourage you to contribute to mjml_nif.
+Please check our [CONTRIBUTING.md](./CONTRIBUTING.md) guides for more information.
 
-This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to our [CODE_OF_CONDUCT.md](https://github.com/adoptoposs/mjml_nif/blob/main/CODE_OF_CONDUCT.md).
+This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to our [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md).
 
 
-## License
+## Copyright and License
 
-Copyright (c) 2020-2021, Paul Götze
+Copyright (c) 2020 Paul Götze
 
-This software is licensed under the [MIT License](https://github.com/adoptoposs/mjml_nif/blob/main/LICENSE.md).
-
+This work is free. You can redistribute it and/or modify it under the
+terms of the MIT License. See the [LICENSE.md](./LICENSE.md) file for more details.

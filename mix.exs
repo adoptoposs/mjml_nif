@@ -1,19 +1,17 @@
 defmodule Mjml.MixProject do
   use Mix.Project
 
-  @github_url "https://github.com/adoptoposs/mjml_nif"
+  @source_url "https://github.com/adoptoposs/mjml_nif"
+  @version "1.1.1"
 
   def project do
     [
       app: :mjml,
-      version: "1.1.1",
+      version: @version,
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
       compilers: Mix.compilers(),
       name: "mjml",
-      description: description(),
-      source_url: @github_url,
-      homepage_url: @github_url,
       package: package(),
       docs: docs(),
       deps: deps()
@@ -31,27 +29,33 @@ defmodule Mjml.MixProject do
   defp deps do
     [
       {:rustler, "~> 0.21"},
-      {:ex_doc, "~> 0.23", only: :dev, runtime: false}
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
 
-  defp description() do
-    "NIF bindings for the MJML Rust implementation (mrml)"
-  end
-
-  defp package() do
+  defp package do
     [
+      description: "NIF bindings for the MJML Rust implementation (mrml)",
       maintainers: ["Paul Götze"],
       licenses: ["MIT"],
       files: ~w(lib native .formatter.exs README* LICENSE* mix.exs),
-      links: %{"GitHub" => @github_url}
+      links: %{"GitHub" => @source_url}
     ]
   end
 
-  defp docs() do
+  defp docs do
     [
       main: "readme",
-      extras: ["README.md"]
+      extras: [
+        "CHANGELOG.md": [],
+        "CODE_OF_CONDUCT.md": [title: "Code of Conduct"],
+        "LICENSE.md": [title: "License"],
+        "README.md": [title: "Overview"]
+      ],
+      source_url: @source_url,
+      source_ref: "v#{@version}",
+      homepage_url: @source_url,
+      formatters: ["html"]
     ]
   end
 end

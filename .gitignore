@@ -1,9 +1,6 @@
 # The directory Mix will write compiled artifacts to.
 /_build/
 
-# The directory that rustler will write compiled artifacts to.
-/priv
-
 # If you run "mix test --cover", coverage assets end up here.
 /cover/
 
@@ -25,6 +22,11 @@ erl_crash.dump
 # Ignore package tarball (built via "mix hex.build").
 mjml-*.tar
 
-# The directory that rust will compile to for testing.
-/native/mjml_nif/target
+# Temporary files, for example, from tests.
+/tmp/
 
+# The directory that rustler will write compiled artifacts to.
+/priv/
+
+# The directory that rust will compile to for testing.
+/native/mjml_nif/target/
