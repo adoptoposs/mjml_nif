@@ -48,6 +48,7 @@ defmodule Mjml.MixProject do
       main: "readme",
       extras: [
         "CHANGELOG.md": [],
+        "CONTRIBUTING.md": [title: "Contributing"],
         "CODE_OF_CONDUCT.md": [title: "Code of Conduct"],
         "LICENSE.md": [title: "License"],
         "README.md": [title: "Overview"]
