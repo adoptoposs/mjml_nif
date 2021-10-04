@@ -9,8 +9,14 @@ For clarity, major releases of mjml_nif use the respective [mrml] releases with 
 I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 1.x` versions use mrml versions `>= 1.0.0, < 2.0.0`, etc.
 
 ## [Unreleased]
+-
+
+## [1.1.2] - 2021-10-04
 ### Changed
-- Use [mrml] v1.2.4
+- Use [mrml] v1.2.5, which allows the `lang` attribute in the mjml tag and allows using `mj-raw` tags in `mj-head` (see [mrml diff v1.2.3..v1.2.5](https://github.com/jdrouet/mrml/compare/mrml-core-1.2.3...mrml-core-1.2.5))
+
+### Fixed
+- Misc doc changes ([#31](https://github.com/adoptoposs/mjml_nif/pull/31))
 
 ## [1.1.1] - 2021-06-01
 ### Fixed
@@ -45,7 +51,8 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 ## [0.1.0] – 2020-07-19
 Initial release
 
-[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v1.1.1...HEAD
+[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v1.1.2...HEAD
+[1.1.2]: https://github.com/adoptoposs/mjml_nif/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/adoptoposs/mjml_nif/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/adoptoposs/mjml_nif/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/adoptoposs/mjml_nif/compare/v0.3.1...v1.0.0
