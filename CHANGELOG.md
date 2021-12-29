@@ -9,7 +9,9 @@ For clarity, major releases of mjml_nif use the respective [mrml] releases with 
 I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 1.x` versions use mrml versions `>= 1.0.0, < 2.0.0`, etc.
 
 ## [Unreleased]
--
+### Changed
+- Update rustler to v0.23 (drops support for OTP 20)
+- Use [mrml] v1.2.6
 
 ## [1.1.2] - 2021-10-04
 ### Changed
