@@ -2,13 +2,13 @@ defmodule Mjml.MixProject do
   use Mix.Project
 
   @source_url "https://github.com/adoptoposs/mjml_nif"
-  @version "1.1.3"
+  @version "1.2.0"
 
   def project do
     [
       app: :mjml,
       version: @version,
-      elixir: "~> 1.9",
+      elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
       compilers: Mix.compilers(),
       name: "mjml",
@@ -28,7 +28,7 @@ defmodule Mjml.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:rustler, "~> 0.21"},
+      {:rustler, "~> 0.24"},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end

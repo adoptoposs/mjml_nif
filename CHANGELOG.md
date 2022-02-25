@@ -12,6 +12,10 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ---
 
+## [1.2.0] - 2022-02-25
+### Changed
+- Update rustler to v0.24 (drops support for OTP <22, requires Elixir ~> 1.11)
+
 ## [1.1.3] - 2022-02-16
 ### Changed
 - Update rustler to v0.23 (drops support for OTP 20)
@@ -57,7 +61,8 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 ## [0.1.0] – 2020-07-19
 Initial release
 
-[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v1.1.3...HEAD
+[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/adoptoposs/mjml_nif/compare/v1.1.3...v1.2.0
 [1.1.3]: https://github.com/adoptoposs/mjml_nif/compare/v1.1.2...v1.1.3
 [1.1.2]: https://github.com/adoptoposs/mjml_nif/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/adoptoposs/mjml_nif/compare/v1.1.0...v1.1.1
