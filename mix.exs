@@ -28,7 +28,7 @@ defmodule Mjml.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:rustler, "~> 0.24"},
+      {:rustler_precompiled, "~> 0.2.0"},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
@@ -38,7 +38,7 @@ defmodule Mjml.MixProject do
       description: "NIF bindings for the MJML Rust implementation (mrml)",
       maintainers: ["Paul Götze"],
       licenses: ["MIT"],
-      files: ~w(lib native .formatter.exs README* LICENSE* mix.exs),
+      files: ~w(lib native .formatter.exs README* LICENSE* mix.exs checksum-*.exs),
       links: %{"GitHub" => @source_url}
     ]
   end
