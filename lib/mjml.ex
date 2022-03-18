@@ -3,7 +3,16 @@ defmodule Mjml do
   Provides functions for transpiling MJML email templates to HTML.
   """
 
-  use Rustler, otp_app: :mjml, crate: "mjml_nif"
+  mix_config = Mix.Project.config()
+  version = mix_config[:version]
+  github_url = mix_config[:package][:links]["GitHub"]
+
+  use RustlerPrecompiled,
+    otp_app: :mjml,
+    crate: "mjml_nif",
+    base_url: "#{github_url}/releases/download/v#{version}",
+    force_build: System.get_env("MJML_BUILD") in ["1", "true"],
+    version: version
 
   @doc """
   Converts an MJML string to HTML content.
