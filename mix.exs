@@ -14,7 +14,8 @@ defmodule Mjml.MixProject do
       name: "mjml",
       package: package(),
       docs: docs(),
-      deps: deps()
+      deps: deps(),
+      aliases: aliases()
     ]
   end
 
@@ -57,6 +58,13 @@ defmodule Mjml.MixProject do
       source_ref: "v#{@version}",
       homepage_url: @source_url,
       formatters: ["html"]
+    ]
+  end
+
+  defp aliases do
+    [
+      # always force building the NIF for test runs:
+      test: [fn _ -> System.put_env("MJML_BUILD", "true") end, "test"]
     ]
   end
 end
