@@ -30,3 +30,6 @@ mjml-*.tar
 
 # The directory that rust will compile to for testing.
 /native/mjml_nif/target/
+
+# The checksum files for precompiled NIFs
+checksum-*.exs
