@@ -12,6 +12,11 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ---
 
+## [1.3.1] - 2022-03-25
+### Fixed
+- Use [mrml] v1.2.9, which fixes a bug with parsing the self-closing `br` and `meta` tags
+(see [mrml diff v1.2.8..v1.2.9][mrml-v1.2.8-v1.2.9]))
+
 ## [1.3.0] - 2022-03-18
 ### Changed
 - Use [Rustler Precompiled](https://github.com/philss/rustler_precompiled): this allows to use the mjml NIF without the Rust compiler 🎉
@@ -66,7 +71,8 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 ## [0.1.0] – 2020-07-19
 Initial release
 
-[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.0...HEAD
+[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.1...HEAD
+[1.3.1]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.0...v1.3.1
 [1.3.0]: https://github.com/adoptoposs/mjml_nif/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/adoptoposs/mjml_nif/compare/v1.1.3...v1.2.0
 [1.1.3]: https://github.com/adoptoposs/mjml_nif/compare/v1.1.2...v1.1.3
@@ -80,6 +86,7 @@ Initial release
 [0.1.0]: https://github.com/adoptoposs/mjml_nif/compare/e77d33e9bcb58e0e2e9e522322d97ebdcb212618...v0.1.0
 [mrml]: https://github.com/jdrouet/mrml
 
+[mrml-v1.2.8-v1.2.9]: https://github.com/jdrouet/mrml/compare/mrml-core-1.2.8...mrml-core-1.2.9
 [mrml-v1.2.7-v1.2.8]: https://github.com/jdrouet/mrml/compare/mrml-core-1.2.7...mrml-core-1.2.8
 [mrml-v1.2.5-v1.2.7]: https://github.com/jdrouet/mrml/compare/mrml-core-1.2.5...mrml-core-1.2.7
 [mrml-v1.2.3-v1.2.5]: https://github.com/jdrouet/mrml/compare/mrml-core-1.2.3...mrml-core-1.2.5
