@@ -11,4 +11,4 @@ crate-type = ["cdylib"]
 
 [dependencies]
 rustler = "0.25.0"
-mrml = { version = "1.2", default-features = false, features = ["parse", "render"] }
+mrml = { version = "1.2", default-features = false, features = ["parse", "render", "orderedmap"] }

@@ -12,6 +12,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "autocfg"
+version = "1.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d468802bab17cbc0cc575e9b053f41e72aa36bfa6b7f55e3529ffa43161b97fa"
+
+[[package]]
 name = "cfg-if"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -29,10 +35,27 @@ dependencies = [
 ]
 
 [[package]]
+name = "hashbrown"
+version = "0.11.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ab5ef0d4909ef3724cc8cce6ccc8572c5c817592e9285f5464f8e86f8bd3726e"
+
+[[package]]
 name = "heck"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2540771e65fc8cb83cd6e8a237f70c319bd5c29f78ed1084ba5d50eeac86f7f9"
+
+[[package]]
+name = "indexmap"
+version = "1.8.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0f647032dfaa1f8b6dc29bd3edb7bbef4861b8b8007ebb118d6db284fd59f6ee"
+dependencies = [
+ "autocfg",
+ "hashbrown",
+ "serde",
+]
 
 [[package]]
 name = "lazy_static"
@@ -66,7 +89,9 @@ version = "1.2.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b2fd038a54a4b1d0c40c4cea5a1dfc6841ab4824b88f221d197e95a62efc2afc"
 dependencies = [
+ "indexmap",
  "rand",
+ "rustc-hash",
  "xmlparser",
 ]
 
@@ -142,6 +167,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f497285884f3fcff424ffc933e56d7cbca511def0c9831a7f9b5f6153e3cc89b"
 
 [[package]]
+name = "rustc-hash"
+version = "1.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "08d43f7aa6b08d49f382cde6a7982047c3426db949b1424bc4b7ec9ae12c6ce2"
+
+[[package]]
 name = "rustler"
 version = "0.25.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -173,6 +204,12 @@ dependencies = [
  "regex",
  "unreachable",
 ]
+
+[[package]]
+name = "serde"
+version = "1.0.137"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "61ea8d54c77f8315140a05f4c7237403bf38b72704d031543aa1d16abbf517d1"
 
 [[package]]
 name = "syn"
