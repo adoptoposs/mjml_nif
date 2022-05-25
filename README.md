@@ -16,7 +16,7 @@ The package can be installed by adding `mjml` to your list of dependencies in `m
 ```elixir
 def deps do
   [
-    {:mjml, "~> 1.3.2"}
+    {:mjml, "~> 1.3.3"}
   ]
 end
 ```
