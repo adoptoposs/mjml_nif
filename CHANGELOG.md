@@ -12,6 +12,11 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ---
 
+## [1.3.3] - 2022-05-25
+### Fixes
+- Use "orderedmap" feature of mrml to get consistent HTML output (see [jdrouet/mrml#215](https://github.com/jdrouet/mrml/pull/215))
+- Use [Rustler Precompiled v0.5.1](https://github.com/philss/rustler_precompiled/blob/main/CHANGELOG.md#051---2022-05-24)
+
 ## [1.3.2] - 2022-03-26
 ### Fixed
 - Use [mrml] v1.2.10, which fixes a bug with parsing other self-closing tags
@@ -76,7 +81,8 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 ## [0.1.0] – 2020-07-19
 Initial release
 
-[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.2...HEAD
+[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.3...HEAD
+[1.3.3]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.2...v1.3.3
 [1.3.2]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.1...v1.3.2
 [1.3.1]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.0...v1.3.1
 [1.3.0]: https://github.com/adoptoposs/mjml_nif/compare/v1.2.0...v1.3.0
