@@ -50,6 +50,13 @@ mix format
 
 This will keep the code style consistent and future code diffs as small as possible.
 
+## Publishing a new package version
+
+For detailed info about what needs to be done in order to publish a new version of
+the mjml package on hex.pm, please refer to the release flow section in the
+[precompilation guide](https://hexdocs.pm/rustler_precompiled/precompilation_guide.html)
+of `rustler_precompiled`.
+
 ---------
 
 As a contributor, please keep in mind this project is free and open source software. Maintainers are not paid to work on it, so there might be times were the maintainers seem unresponsive. If you have that feeling, please be patient and be assured, that all team members try their best to review your contribution and reply to you as soon as their time allows.
