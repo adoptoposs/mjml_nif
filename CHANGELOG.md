@@ -12,8 +12,12 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ---
 
+## [1.3.4] - 2022-07-01
+### Fixed
+- Add Cross.toml in order to pass the NIF version to cross (see [philss/rustler_precompiled#23](https://github.com/philss/rustler_precompiled/issues/23))
+
 ## [1.3.3] - 2022-05-25
-### Fixes
+### Fixed
 - Use "orderedmap" feature of mrml to get consistent HTML output (see [jdrouet/mrml#215](https://github.com/jdrouet/mrml/pull/215))
 - Use [Rustler Precompiled v0.5.1](https://github.com/philss/rustler_precompiled/blob/main/CHANGELOG.md#051---2022-05-24)
 
@@ -81,7 +85,8 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 ## [0.1.0] – 2020-07-19
 Initial release
 
-[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.3...HEAD
+[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.4...HEAD
+[1.3.4]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.3...v1.3.4
 [1.3.3]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.2...v1.3.3
 [1.3.2]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.1...v1.3.2
 [1.3.1]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.0...v1.3.1
