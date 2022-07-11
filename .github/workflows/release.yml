@@ -18,97 +18,44 @@ defaults:
 
 jobs:
   build_release:
-    name: NIF ${{ matrix.job.nif }} - ${{ matrix.job.target }} (${{ matrix.job.os }})
+    name: NIF ${{ matrix.nif }} - ${{ matrix.job.target }} (${{ matrix.job.os }})
     runs-on: ${{ matrix.job.os }}
     strategy:
       fail-fast: false
       matrix:
+        nif: ["2.16", "2.15", "2.14"]
         job:
-          # NIF version 2.16
-          - {
-              target: arm-unknown-linux-gnueabihf,
-              os: ubuntu-20.04,
-              nif: "2.16",
-              use-cross: true,
-            }
-          - {
-              target: aarch64-unknown-linux-gnu,
-              os: ubuntu-20.04,
-              nif: "2.16",
-              use-cross: true,
-            }
-          - { target: aarch64-apple-darwin, os: macos-11, nif: "2.16" }
-          - { target: x86_64-apple-darwin, os: macos-11, nif: "2.16" }
-          - { target: x86_64-unknown-linux-gnu, os: ubuntu-20.04, nif: "2.16" }
-          - {
-              target: x86_64-unknown-linux-musl,
-              os: ubuntu-20.04,
-              nif: "2.16",
-              use-cross: true,
-            }
-          - { target: x86_64-pc-windows-gnu, os: windows-2019, nif: "2.16" }
-          - { target: x86_64-pc-windows-msvc, os: windows-2019, nif: "2.16" }
-          # NIF version 2.15
-          - {
-              target: arm-unknown-linux-gnueabihf,
-              os: ubuntu-20.04,
-              nif: "2.15",
-              use-cross: true,
-            }
-          - {
-              target: aarch64-unknown-linux-gnu,
-              os: ubuntu-20.04,
-              nif: "2.15",
-              use-cross: true,
-            }
-          - { target: aarch64-apple-darwin, os: macos-11, nif: "2.15" }
-          - { target: x86_64-apple-darwin, os: macos-11, nif: "2.15" }
-          - { target: x86_64-unknown-linux-gnu, os: ubuntu-20.04, nif: "2.15" }
-          - {
-              target: x86_64-unknown-linux-musl,
-              os: ubuntu-20.04,
-              nif: "2.15",
-              use-cross: true,
-            }
-          - { target: x86_64-pc-windows-gnu, os: windows-2019, nif: "2.15" }
-          - { target: x86_64-pc-windows-msvc, os: windows-2019, nif: "2.15" }
-          # # NIF version 2.14
-          - {
-              target: arm-unknown-linux-gnueabihf,
-              os: ubuntu-20.04,
-              nif: "2.14",
-              use-cross: true,
-            }
-          - {
-              target: aarch64-unknown-linux-gnu,
-              os: ubuntu-20.04,
-              nif: "2.14",
-              use-cross: true,
-            }
-          - { target: aarch64-apple-darwin, os: macos-11, nif: "2.14" }
-          - { target: x86_64-apple-darwin, os: macos-11, nif: "2.14" }
-          - { target: x86_64-unknown-linux-gnu, os: ubuntu-20.04, nif: "2.14" }
-          - {
-              target: x86_64-unknown-linux-musl,
-              os: ubuntu-20.04,
-              nif: "2.14",
-              use-cross: true,
-            }
-          - { target: x86_64-pc-windows-gnu, os: windows-2019, nif: "2.14" }
-          - { target: x86_64-pc-windows-msvc, os: windows-2019, nif: "2.14" }
+          - { target: arm-unknown-linux-gnueabihf, os: ubuntu-20.04, use-cross: true }
+          - { target: aarch64-unknown-linux-gnu, os: ubuntu-20.04, use-cross: true }
+          - { target: aarch64-unknown-linux-musl, os: ubuntu-20.04, use-cross: true }
+          - { target: aarch64-apple-darwin, os: macos-11 }
+          - { target: x86_64-apple-darwin, os: macos-11 }
+          - { target: x86_64-unknown-linux-gnu, os: ubuntu-20.04 }
+          - { target: x86_64-unknown-linux-musl, os: ubuntu-20.04, use-cross: true }
+          - { target: x86_64-pc-windows-gnu, os: windows-2019 }
+          - { target: x86_64-pc-windows-msvc, os: windows-2019 }
 
     env:
-      RUSTLER_NIF_VERSION: ${{ matrix.job.nif }}
+      RUSTLER_NIF_VERSION: ${{ matrix.nif }}
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
+
+      - uses: actions/cache@v3.0.3
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+          key: ${{ matrix.job.os }}-${{ matrix.job.target }}-cargo-
 
       - name: Install prerequisites
         shell: bash
         run: |
           case ${{ matrix.job.target }} in
             arm-unknown-linux-*) sudo apt-get -y update ; sudo apt-get -y install gcc-arm-linux-gnueabihf ;;
-            aarch64-unknown-linux-gnu) sudo apt-get -y update ; sudo apt-get -y install gcc-aarch64-linux-gnu ;;
+            aarch64-unknown-linux-*) sudo apt-get -y update ; sudo apt-get -y install gcc-aarch64-linux-gnu ;;
           esac
 
       - name: Extract crate information
@@ -142,8 +89,8 @@ jobs:
         if: ${{ matrix.job.use-cross }}
         with:
           binary: "cross"
-          version: "v0.2.1"
-          download_url: "https://github.com/rust-embedded/cross/releases/download/${version}/cross-${version}-x86_64-unknown-linux-gnu.tar.gz"
+          version: "v0.2.4"
+          download_url: "https://github.com/rust-embedded/cross/releases/download/${version}/cross-x86_64-unknown-linux-gnu.tar.gz"
           tarball_binary_path: "${binary}"
           smoke_test: "${binary} --version"
 
