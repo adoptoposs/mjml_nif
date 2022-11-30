@@ -3,38 +3,22 @@ defmodule Mjml do
   Provides functions for transpiling MJML email templates to HTML.
   """
 
-  mix_config = Mix.Project.config()
-  version = mix_config[:version]
-  github_url = mix_config[:package][:links]["GitHub"]
-
-  targets = ~w(
-    arm-unknown-linux-gnueabihf
-    aarch64-apple-darwin
-    aarch64-unknown-linux-gnu
-    aarch64-unknown-linux-musl
-    x86_64-apple-darwin
-    x86_64-pc-windows-gnu
-    x86_64-pc-windows-msvc
-    x86_64-unknown-linux-gnu
-    x86_64-unknown-linux-musl
-  )
-
-  use RustlerPrecompiled,
-    otp_app: :mjml,
-    crate: "mjml_nif",
-    base_url: "#{github_url}/releases/download/v#{version}",
-    force_build: System.get_env("MJML_BUILD") in ["1", "true"],
-    version: version,
-    targets: targets
-
   @doc """
   Converts an MJML string to HTML content.
 
-  (Passing any options – which the underlying mrml Rust crate already handles – is not yet implemented.)
-
   Returns a result tuple:
-  - `{:ok, html}` for a successful MJML transpiling
-  - `{:error, message}` for a failed MJML transpiling
+
+  * `{:ok, html}` for a successful MJML transpiling
+  * `{:error, message}` for a failed MJML transpiling
+
+  You can pass render options to customize the rendering of the final HTML:
+
+  * `keep_comments` – when `false`, removes the comments from the rendered HTML.
+    Defaults to `true`.
+
+  * `social_icon_path` – when given, uses this base path to generate social icon URLs.
+    E.g. `social_icon_path: "https://example.com/icons/"` will generate a social icon
+    URL, like "https://example.com/icons/github.png"
 
   ## Examples
 
@@ -44,8 +28,13 @@ defmodule Mjml do
       iex> Mjml.to_html("something not MJML")
       {:error, "Couldn't convert MJML template"}
 
-  """
-  def to_html(_mjml), do: error()
+      iex> opts = [keep_comments: false, social_icon_path: "https://example.com/icons/"]
+      iex> Mjml.to_html("<mjml><mj-head></mj-head></mjml>", opts)
+      {:ok, "<!doctype html><html xmlns=..."}
 
-  defp error(), do: :erlang.nif_error(:nif_not_loaded)
+  """
+  def to_html(mjml, opts \\ []) do
+    options = struct(Mjml.RenderOptions, opts)
+    Mjml.Native.to_html(mjml, options)
+  end
 end

@@ -43,6 +43,24 @@ mjml = "something not MJML"
 {:error, message} = Mjml.to_html(mjml)
 ```
 
+### Options
+
+Available rendering options are:
+
+* `keep_comments` – when `false`, removes comments from the final HTML. Defaults to `true`.
+* `social_icon_path` – when given, uses this base path to generate social icon URLs.
+
+```elixir
+mjml = "<mjml>...</mjml>"
+
+opts = [
+  keep_comments: false,
+  social_icon_path: "https://example.com/icons/"
+]
+
+{:ok, html} = Mjml.to_html(mjml, opts)
+```
+
 ## Contributing
 
 We encourage you to contribute to mjml_nif.
