@@ -12,6 +12,12 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ---
 
+## [1.4.0] - 2022-11-30
+
+### Changed
+- Use rustler_precompiled v0.5.4
+- Change `Mjml.to_html/1` to `Mjml.to_html/2` and allow passing rendering options `keep_comments` (defaults to `true`) & `social_icon_path`
+
 ## [1.3.5] - 2022-07-11
 ### Fixed
 - Add aarch64-unknown-linux-musl as precompiled target (see [#66](https://github.com/adoptoposs/mjml_nif/issues/66))
@@ -89,7 +95,8 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 ## [0.1.0] – 2020-07-19
 Initial release
 
-[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.5...HEAD
+[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v1.4.0...HEAD
+[1.4.0]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.5...v1.4.0
 [1.3.5]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.4...v1.3.5
 [1.3.4]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.3...v1.3.4
 [1.3.3]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.2...v1.3.3
