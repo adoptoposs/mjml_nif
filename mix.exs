@@ -2,7 +2,7 @@ defmodule Mjml.MixProject do
   use Mix.Project
 
   @source_url "https://github.com/adoptoposs/mjml_nif"
-  @version "1.3.5"
+  @version "1.4.0"
 
   def project do
     [
@@ -37,7 +37,7 @@ defmodule Mjml.MixProject do
 
   defp package do
     [
-      description: "NIF bindings for the MJML Rust implementation (mrml)",
+      description: "Responsive emails made easy. NIF bindings for the MJML Rust implementation (mrml)",
       maintainers: ["Paul Götze"],
       licenses: ["MIT"],
       files: ~w(lib native .formatter.exs README* LICENSE* mix.exs checksum-*.exs),
