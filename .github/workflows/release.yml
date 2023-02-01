@@ -10,12 +10,6 @@ on:
     tags:
       - "*"
 
-defaults:
-  run:
-    # Sets the working dir for "run" scripts.
-    # Note that this won't change the directory for actions (tasks with "uses").
-    working-directory: "./native/mjml_nif"
-
 jobs:
   build_release:
     name: NIF ${{ matrix.nif }} - ${{ matrix.job.target }} (${{ matrix.job.os }})
@@ -55,12 +49,12 @@ jobs:
       id: build-crate
       uses: philss/rustler-precompiled-action@v1.0.0
       with:
-        project-name: example
+        project-name: mjml_nif
         project-version: ${{ env.PROJECT_VERSION }}
         target: ${{ matrix.job.target }}
         nif-version: ${{ matrix.nif }}
         use-cross: ${{ matrix.job.use-cross }}
-        project-dir: "native/example"
+        project-dir: "native/mjml_nif"
 
     - name: Artifact upload
       uses: actions/upload-artifact@v3
