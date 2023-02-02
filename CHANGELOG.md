@@ -12,6 +12,13 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ---
 
+## [1.5.0] - 2023-02-02
+
+### Changed
+- Use rustler_precompiled v0.6.0
+- Add new target `riscv64gc-unknown-linux-gnu`
+- Use [mrml] v1.2.11, which handles inner attributes (see [mrml diff v1.2.10..v1.2.11][mrml-v1.2.10-v1.2.11])
+
 ## [1.4.0] - 2022-11-30
 
 ### Changed
@@ -96,6 +103,7 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 Initial release
 
 [Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v1.4.0...HEAD
+[1.5.0]: https://github.com/adoptoposs/mjml_nif/compare/v1.4.0...v1.5.0
 [1.4.0]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.5...v1.4.0
 [1.3.5]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.4...v1.3.5
 [1.3.4]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.3...v1.3.4
@@ -115,6 +123,8 @@ Initial release
 [0.1.0]: https://github.com/adoptoposs/mjml_nif/compare/e77d33e9bcb58e0e2e9e522322d97ebdcb212618...v0.1.0
 [mrml]: https://github.com/jdrouet/mrml
 
+
+[mrml-v1.2.10-v1.2.11]: https://github.com/jolimail/mrml-core/compare/mrml-core-1.2.10...v1.2.11
 [mrml-v1.2.9-v1.2.10]: https://github.com/jdrouet/mrml/compare/mrml-core-1.2.9...mrml-core-1.2.10
 [mrml-v1.2.8-v1.2.9]: https://github.com/jdrouet/mrml/compare/mrml-core-1.2.8...mrml-core-1.2.9
 [mrml-v1.2.7-v1.2.8]: https://github.com/jdrouet/mrml/compare/mrml-core-1.2.7...mrml-core-1.2.8
