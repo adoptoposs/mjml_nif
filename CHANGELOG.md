@@ -102,7 +102,7 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 ## [0.1.0] – 2020-07-19
 Initial release
 
-[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v1.4.0...HEAD
+[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v1.5.0...HEAD
 [1.5.0]: https://github.com/adoptoposs/mjml_nif/compare/v1.4.0...v1.5.0
 [1.4.0]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.5...v1.4.0
 [1.3.5]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.4...v1.3.5
