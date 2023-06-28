@@ -19,14 +19,22 @@ jobs:
     name: "[${{matrix.otp}}/${{matrix.elixir}}] Tests on mjml_nif [OTP/Elixir]"
     strategy:
       fail-fast: false
+      # For compatibility between Elixir & Erlang/OTP see
+      # https://hexdocs.pm/elixir/compatibility-and-deprecations.html#compatibility-between-elixir-and-erlang-otp
       matrix:
-        otp: [24.3, 25.1]
-        elixir: [1.11.4, 1.12.3, 1.13.4, 1.14.2]
+        otp: [24.3, 25.1, 26.0]
+        elixir: [1.11.4, 1.12.3, 1.13.4, 1.14.5, 1.15.0]
         exclude:
           - otp: 25.1
             elixir: 1.11.4
           - otp: 25.1
             elixir: 1.12.3
+          - otp: 26.0
+            elixir: 1.11.4
+          - otp: 26.0
+            elixir: 1.12.3
+          - otp: 26.0
+            elixir: 1.13.4
     steps:
       - uses: actions/checkout@v2
         with:
