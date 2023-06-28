@@ -13,8 +13,13 @@ rustflags = [
   "-C", "link-arg=dynamic_lookup",
 ]
 
+# Libatomic is needed for 32 bits ARM.
+# See: https://github.com/philss/rustler_precompiled/issues/53
 [target.arm-unknown-linux-gnueabihf]
 linker = "arm-linux-gnueabihf-gcc"
+rustflags = [
+  "-l", "dylib=atomic"
+]
 
 # See https://github.com/rust-lang/rust/issues/59302
 [target.x86_64-unknown-linux-musl]
