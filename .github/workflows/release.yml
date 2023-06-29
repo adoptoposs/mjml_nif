@@ -19,14 +19,14 @@ jobs:
       matrix:
         nif: ["2.16", "2.15"]
         job:
-          - { target: arm-unknown-linux-gnueabihf , os: ubuntu-20.04 , use-cross: true }
-          - { target: aarch64-unknown-linux-gnu   , os: ubuntu-20.04 , use-cross: true }
-          - { target: aarch64-unknown-linux-musl  , os: ubuntu-20.04 , use-cross: true }
+          - { target: arm-unknown-linux-gnueabihf , os: ubuntu-22.04 , use-cross: true }
+          - { target: aarch64-unknown-linux-gnu   , os: ubuntu-22.04 , use-cross: true }
+          - { target: aarch64-unknown-linux-musl  , os: ubuntu-22.04 , use-cross: true }
           - { target: aarch64-apple-darwin        , os: macos-11      }
-          - { target: riscv64gc-unknown-linux-gnu , os: ubuntu-20.04 , use-cross: true }
+          - { target: riscv64gc-unknown-linux-gnu , os: ubuntu-22.04 , use-cross: true }
           - { target: x86_64-apple-darwin         , os: macos-11      }
-          - { target: x86_64-unknown-linux-gnu    , os: ubuntu-20.04  }
-          - { target: x86_64-unknown-linux-musl   , os: ubuntu-20.04 , use-cross: true }
+          - { target: x86_64-unknown-linux-gnu    , os: ubuntu-22.04  }
+          - { target: x86_64-unknown-linux-musl   , os: ubuntu-22.04 , use-cross: true }
           - { target: x86_64-pc-windows-gnu       , os: windows-2019  }
           - { target: x86_64-pc-windows-msvc      , os: windows-2019  }
 
@@ -47,13 +47,14 @@ jobs:
 
     - name: Build the project
       id: build-crate
-      uses: philss/rustler-precompiled-action@v1.0.0
+      uses: philss/rustler-precompiled-action@v1.0.1
       with:
         project-name: mjml_nif
         project-version: ${{ env.PROJECT_VERSION }}
         target: ${{ matrix.job.target }}
         nif-version: ${{ matrix.nif }}
         use-cross: ${{ matrix.job.use-cross }}
+        cross-version: "v0.2.5"
         project-dir: "native/mjml_nif"
 
     - name: Artifact upload
