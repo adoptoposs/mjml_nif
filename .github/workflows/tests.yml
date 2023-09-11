@@ -48,7 +48,7 @@ jobs:
           elixir-version: ${{matrix.elixir}}
       - name: Cache hex deps
         id: mix-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             deps
