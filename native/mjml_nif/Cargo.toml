@@ -2,7 +2,7 @@
 name = "mjml_nif"
 version = "1.5.0"
 authors = ["Paul Götze"]
-edition = "2018"
+edition = "2021"
 
 [lib]
 name = "mjml_nif"
