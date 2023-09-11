@@ -3,11 +3,19 @@
 
 version: 2
 updates:
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
+  # Maintain dependencies for hex
   - package-ecosystem: "mix"
     directory: "/"
     schedule:
       interval: "daily"
 
+  # Maintain dependencies for crates
   - package-ecosystem: "cargo"
     directory: "/native/mjml_nif"
     schedule:
