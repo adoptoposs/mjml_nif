@@ -10,6 +10,11 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ## [Unreleased]
 
+### Changed
+- Use rustler_precompiled v0.7.0
+- Use Rust edition 2021
+- Use rustler v0.29.1
+
 ---
 
 ## [1.5.0] - 2023-02-02
