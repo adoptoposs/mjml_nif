@@ -48,7 +48,7 @@ jobs:
 
     - name: Build the project
       id: build-crate
-      uses: philss/rustler-precompiled-action@v1.1.0
+      uses: philss/rustler-precompiled-action@v1.1.1
       with:
         project-name: mjml_nif
         project-version: ${{ env.PROJECT_VERSION }}
