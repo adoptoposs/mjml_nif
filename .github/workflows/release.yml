@@ -20,7 +20,6 @@ jobs:
       matrix:
         nif: ["2.16", "2.15"]
         job:
-          - { target: arm-unknown-linux-gnueabihf , os: ubuntu-22.04 , use-cross: true }
           - { target: aarch64-unknown-linux-gnu   , os: ubuntu-22.04 , use-cross: true }
           - { target: aarch64-unknown-linux-musl  , os: ubuntu-22.04 , use-cross: true }
           - { target: aarch64-apple-darwin        , os: macos-11      }
@@ -40,11 +39,13 @@ jobs:
       run: |
         # Get the project version from mix.exs
         echo "PROJECT_VERSION=$(sed -n 's/^  @version "\(.*\)"/\1/p' mix.exs | head -n1)" >> $GITHUB_ENV
+
     - name: Install Rust toolchain
       uses: dtolnay/rust-toolchain@stable
       with:
         toolchain: stable
         target: ${{ matrix.job.target }}
+
 
     - name: Build the project
       id: build-crate

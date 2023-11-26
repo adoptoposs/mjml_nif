@@ -18,7 +18,7 @@ rustflags = [
 [target.arm-unknown-linux-gnueabihf]
 linker = "arm-linux-gnueabihf-gcc"
 rustflags = [
-  "-l", "dylib=atomic"
+  "-l", "dylib=atomic",
 ]
 
 # See https://github.com/rust-lang/rust/issues/59302
