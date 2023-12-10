@@ -49,13 +49,21 @@ Available rendering options are:
 
 * `keep_comments` – when `false`, removes comments from the final HTML. Defaults to `true`.
 * `social_icon_path` – when given, uses this base path to generate social icon URLs.
+* `fonts` – a Map of font names and their URLs to a hosted CSS file.
+  When given, includes these fonts in the rendered HTML
+  (Note that only actually used fonts will show up!).
+  Defaults to `nil`, which will make the default font families available to
+  be used (Open Sans, Droid Sans, Lato, Roboto, and Ubuntu).
 
 ```elixir
 mjml = "<mjml>...</mjml>"
 
 opts = [
   keep_comments: false,
-  social_icon_path: "https://example.com/icons/"
+  social_icon_path: "https://example.com/icons/",
+  fonts: %{
+      "Noto Color Emoji": "https://fonts.googleapis.com/css?family=Noto+Color+Emoji:400"
+  }
 ]
 
 {:ok, html} = Mjml.to_html(mjml, opts)
