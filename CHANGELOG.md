@@ -11,10 +11,11 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 ## [Unreleased]
 
 ### Changed
-- Use rustler_precompiled v0.7.0 + drop support for Elixir < v1.12
+- Use rustler_precompiled v0.7.1 + drop support for Elixir < v1.12
 - Use Rust edition 2021
 - Use rustler v0.30.0
 - Drop arm-unknown-linux-gnueabihf as precompiled target
+- Use [mrml] v.2.1.1
 
 ---
 

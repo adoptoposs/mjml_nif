@@ -20,6 +20,12 @@ defmodule Mjml do
     E.g. `social_icon_path: "https://example.com/icons/"` will generate a social icon
     URL, like "https://example.com/icons/github.png"
 
+  * `fonts` – a Map of font names and their URLs to hosted CSS files.
+    When given, includes these fonts in the rendered HTML
+    (Note that only actually used fonts will show up!).
+    Defaults to `nil`, which will make the default font families available to
+    be used (Open Sans, Droid Sans, Lato, Roboto, and Ubuntu).
+
   ## Examples
 
       iex> Mjml.to_html("<mjml><mj-head></mj-head></mjml>")
@@ -28,7 +34,13 @@ defmodule Mjml do
       iex> Mjml.to_html("something not MJML")
       {:error, "Couldn't convert MJML template"}
 
-      iex> opts = [keep_comments: false, social_icon_path: "https://example.com/icons/"]
+      iex> opts = [
+      iex>   keep_comments: false,
+      iex>   social_icon_path: "https://example.com/icons/"
+      iex>   fonts: %{
+      iex>     "Noto Color Emoji": "https://fonts.googleapis.com/css?family=Noto+Color+Emoji:400"
+      iex>   }
+      iex> ]
       iex> Mjml.to_html("<mjml><mj-head></mj-head></mjml>", opts)
       {:ok, "<!doctype html><html xmlns=..."}
 

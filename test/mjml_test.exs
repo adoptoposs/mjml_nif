@@ -31,10 +31,10 @@ defmodule MjmlTest do
     assert String.starts_with?(message, "unexpected element")
 
     assert {:error, message} = Mjml.to_html("not MJML")
-    assert String.starts_with?(message, "parsing error: unknown token")
+    assert String.starts_with?(message, "unable to load included template")
 
     assert {:error, message} = Mjml.to_html("<mjml><///invalid-element></mjml>")
-    assert String.starts_with?(message, "parsing error: invalid element")
+    assert String.starts_with?(message, "unable to load included template")
   end
 
   describe "when passing options" do
@@ -75,6 +75,68 @@ defmodule MjmlTest do
       assert html =~ social_icon_path
       assert html =~ "#{social_icon_path}github.png"
       assert html =~ "#{social_icon_path}twitter.png"
+    end
+
+    test "`fonts: %{\"font name\": \"font URL\", ...}` includes the given fonts" do
+      fonts = %{
+       "My Font": "https://myfontserver.example.com/css?family=My+Font:300,400,500,700",
+       "Your Font": "https://yourfontserver.example.com/css?family=Your+Font:300,400,500,700"
+      }
+
+      mjml = """
+        <mjml>
+          <mj-head>
+            <mj-attributes>
+              <mj-all font-family="My Font, Your Font" />
+            </mj-attributes>
+          </mj-head>
+          <mj-body>
+            <mj-section>
+              <mj-column>
+                <mj-text>
+                  test
+                </mj-text>
+              </mj-column>
+            </mj-section>
+          </mj-body>
+        </mjml>
+      """
+
+      assert {:ok, html} = Mjml.to_html(mjml, fonts: fonts)
+
+      [font_name_a, font_name_b] = fonts |> Map.keys()
+      [font_url_a, font_url_b] = fonts |> Map.values()
+
+      assert html =~ font_name_a |> Atom.to_string()
+      assert html =~ font_url_a
+
+      assert html =~ font_name_b |> Atom.to_string()
+      assert html =~ font_url_b
+    end
+
+    test "not providing `fonts` allows using the default fonts" do
+      mjml = """
+        <mjml>
+          <mj-head>
+            <mj-attributes>
+              <mj-all font-family="Open Sans" />
+            </mj-attributes>
+          </mj-head>
+          <mj-body>
+            <mj-section>
+              <mj-column>
+                <mj-text>
+                  test
+                </mj-text>
+              </mj-column>
+            </mj-section>
+          </mj-body>
+        </mjml>
+      """
+
+      assert {:ok, html} = Mjml.to_html(mjml)
+      assert html =~ "Open Sans"
+      assert html =~ "https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700"
     end
   end
 end
