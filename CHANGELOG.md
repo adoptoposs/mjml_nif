@@ -10,12 +10,17 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ## [Unreleased]
 
+
+## [2.0.0] - 2023-12-16
+
 ### Changed
-- Use rustler_precompiled v0.7.1 + drop support for Elixir < v1.12
-- Use Rust edition 2021
-- Use rustler v0.30.0
+- Drop support for Elixir < v1.13
 - Drop arm-unknown-linux-gnueabihf as precompiled target
-- Use [mrml] v.2.1.1
+- Allow passing a rendering option `fonts` to `Mjml.to_html/2`
+- Use [Rustler Precompiled v0.7.1](https://github.com/philss/rustler_precompiled/blob/main/CHANGELOG.md#071---2023-11-30)
+- Use rustler v0.30.0
+- Use Rust edition 2021
+- Use [mrml] v.2.1.1, which provides a `fonts` rendering option and implements mj-include (see [mrml diff v1.2.11..v2.1.1][mrml-v1.2.11-v2.1.1])
 
 ---
 
@@ -109,7 +114,8 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 ## [0.1.0] – 2020-07-19
 Initial release
 
-[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v1.5.0...HEAD
+[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/adoptoposs/mjml_nif/compare/v1.5.0...v2.0.0
 [1.5.0]: https://github.com/adoptoposs/mjml_nif/compare/v1.4.0...v1.5.0
 [1.4.0]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.5...v1.4.0
 [1.3.5]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.4...v1.3.5
@@ -131,7 +137,8 @@ Initial release
 [mrml]: https://github.com/jdrouet/mrml
 
 
-[mrml-v1.2.10-v1.2.11]: https://github.com/jolimail/mrml-core/compare/mrml-core-1.2.10...v1.2.11
+[mrml-v1.2.11-v2.1.1]: https://github.com/jdrouet/mrml/compare/v1.2.11...mrml-v2.1.1
+[mrml-v1.2.10-v1.2.11]: https://github.com/jdrouet/mrml/compare/mrml-core-1.2.10...v1.2.11
 [mrml-v1.2.9-v1.2.10]: https://github.com/jdrouet/mrml/compare/mrml-core-1.2.9...mrml-core-1.2.10
 [mrml-v1.2.8-v1.2.9]: https://github.com/jdrouet/mrml/compare/mrml-core-1.2.8...mrml-core-1.2.9
 [mrml-v1.2.7-v1.2.8]: https://github.com/jdrouet/mrml/compare/mrml-core-1.2.7...mrml-core-1.2.8
