@@ -4,7 +4,6 @@ defmodule Mjml.Native do
   github_url = mix_config[:package][:links]["GitHub"]
 
   targets = ~w(
-    arm-unknown-linux-gnueabihf
     aarch64-apple-darwin
     aarch64-unknown-linux-gnu
     aarch64-unknown-linux-musl
