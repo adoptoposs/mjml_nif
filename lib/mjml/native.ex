@@ -21,7 +21,8 @@ defmodule Mjml.Native do
     base_url: "#{github_url}/releases/download/v#{version}",
     force_build: System.get_env("MJML_BUILD") in ["1", "true"],
     version: version,
-    targets: targets
+    targets: targets,
+    nif_versions: ~w(2.15 2.16)
 
   def to_html(_mjml, _render_options), do: error()
   defp error(), do: :erlang.nif_error(:nif_not_loaded)
