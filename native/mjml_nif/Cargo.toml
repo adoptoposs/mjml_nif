@@ -1,6 +1,6 @@
 [package]
 name = "mjml_nif"
-version = "1.5.0"
+version = "2.0.0"
 authors = ["Paul Götze"]
 edition = "2021"
 
