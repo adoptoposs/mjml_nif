@@ -15,6 +15,11 @@ defmodule Mjml.Native do
     x86_64-unknown-linux-musl
   )
 
+  nif_versions = ~w(
+    2.15
+    2.16
+  )
+
   use RustlerPrecompiled,
     otp_app: :mjml,
     crate: "mjml_nif",
@@ -22,7 +27,7 @@ defmodule Mjml.Native do
     force_build: System.get_env("MJML_BUILD") in ["1", "true"],
     version: version,
     targets: targets,
-    nif_versions: ~w(2.15 2.16)
+    nif_versions: nif_versions
 
   def to_html(_mjml, _render_options), do: error()
   defp error(), do: :erlang.nif_error(:nif_not_loaded)
