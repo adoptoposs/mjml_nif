@@ -4,14 +4,24 @@ defmodule MjmlTest do
   test "transpiles the given MJML to HTML" do
     mjml = """
       <mjml>
+        <mj-head>
+          <mj-attributes>
+            <mj-all font-family="My Font"></mj-all>
+          </mj-attributes>
+          <mj-font name="My Font" href="https://myfontserver.example.com/css?family=My+Font"></mj-font>
+          <mj-font name="Other Font" href="https://myfontserver.example.com/css?family=Other+Font" />
+        </mj-head>
         <mj-body>
           <mj-section>
             <mj-column>
               <mj-image width="100px" src="logo.png" />
               <mj-divider border-color="#F45E43" />
-              <mj-text font-size="20px" color="#F45E43" font-family="helvetica">
+              <mj-text font-size="20px" color="#F45E43" font-family="Other Font, helvetica">
                 <!-- my comment -->
                 Hello<br>Email!
+              </mj-text>
+              <mj-text>
+                This is a test.
               </mj-text>
             </mj-column>
           </mj-section>
@@ -24,6 +34,8 @@ defmodule MjmlTest do
     assert String.ends_with?(html, "</html>")
     assert html =~ "<!-- my comment -->"
     assert html =~ "Hello<br />Email!"
+    assert html =~ "My Font"
+    assert html =~ "Other Font"
   end
 
   test "fails to parse invalid MJML" do
@@ -79,8 +91,8 @@ defmodule MjmlTest do
 
     test "`fonts: %{\"font name\": \"font URL\", ...}` includes the given fonts" do
       fonts = %{
-       "My Font": "https://myfontserver.example.com/css?family=My+Font:300,400,500,700",
-       "Your Font": "https://yourfontserver.example.com/css?family=Your+Font:300,400,500,700"
+        "My Font": "https://myfontserver.example.com/css?family=My+Font:300,400,500,700",
+        "Your Font": "https://yourfontserver.example.com/css?family=Your+Font:300,400,500,700"
       }
 
       mjml = """
