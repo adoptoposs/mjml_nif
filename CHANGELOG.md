@@ -10,6 +10,9 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ## [Unreleased]
 
+
+## [3.0.0] - 2023-12-23
+
 ## Changed
 - Use [mrml] v.3.0.0, which fixes an issue with rendering not self-closing `<mj-font></mj-font>` tags. (See https://github.com/jdrouet/mrml/issues/356, [mrml diff v2.1.1..v3.0.0][mrml-v2.1.1-v3.0.0]).
 
@@ -17,7 +20,7 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ### Changed
 - Drop support for Elixir < v1.13
-- Drop arm-unknown-linux-gnueabihf as precompiled target
+- Drop `arm-unknown-linux-gnueabihf` as precompiled target
 - Allow passing a rendering option `fonts` to `Mjml.to_html/2`
 - Use [Rustler Precompiled v0.7.1](https://github.com/philss/rustler_precompiled/blob/main/CHANGELOG.md#071---2023-11-30)
 - Use rustler v0.30.0
@@ -41,7 +44,7 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ## [1.3.5] - 2022-07-11
 ### Fixed
-- Add aarch64-unknown-linux-musl as precompiled target (see [#66](https://github.com/adoptoposs/mjml_nif/issues/66))
+- Add `aarch64-unknown-linux-musl` as precompiled target (see [#66](https://github.com/adoptoposs/mjml_nif/issues/66))
 
 ## [1.3.4] - 2022-07-01
 ### Fixed
@@ -116,7 +119,8 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 ## [0.1.0] – 2020-07-19
 Initial release
 
-[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v3.0.0...HEAD
+[3.0.0]: https://github.com/adoptoposs/mjml_nif/compare/v2.0.0...v3.0.0
 [2.0.0]: https://github.com/adoptoposs/mjml_nif/compare/v1.5.0...v2.0.0
 [1.5.0]: https://github.com/adoptoposs/mjml_nif/compare/v1.4.0...v1.5.0
 [1.4.0]: https://github.com/adoptoposs/mjml_nif/compare/v1.3.5...v1.4.0
