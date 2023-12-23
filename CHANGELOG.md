@@ -10,6 +10,8 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ## [Unreleased]
 
+## Changed
+- Use [mrml] v.3.0.0, which fixes an issue with rendering not self-closing `<mj-font></mj-font>` tags. (See https://github.com/jdrouet/mrml/issues/356, [mrml diff v2.1.1..v3.0.0][mrml-v2.1.1-v3.0.0]).
 
 ## [2.0.0] - 2023-12-16
 
@@ -137,6 +139,7 @@ Initial release
 [mrml]: https://github.com/jdrouet/mrml
 
 
+[mrml-v2.1.1-v3.0.0]: https://github.com/jdrouet/mrml/compare/mrml-v2.1.1...mrml-v3.0.0
 [mrml-v1.2.11-v2.1.1]: https://github.com/jdrouet/mrml/compare/v1.2.11...mrml-v2.1.1
 [mrml-v1.2.10-v1.2.11]: https://github.com/jdrouet/mrml/compare/mrml-core-1.2.10...v1.2.11
 [mrml-v1.2.9-v1.2.10]: https://github.com/jdrouet/mrml/compare/mrml-core-1.2.9...mrml-core-1.2.10
