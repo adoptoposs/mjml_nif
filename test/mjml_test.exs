@@ -5,6 +5,7 @@ defmodule MjmlTest do
     mjml = """
       <mjml>
         <mj-head>
+          <!-- Comment -->
           <mj-attributes>
             <mj-all font-family="My Font"></mj-all>
           </mj-attributes>
@@ -13,6 +14,7 @@ defmodule MjmlTest do
         </mj-head>
         <mj-body>
           <mj-section>
+            <!-- Comment -->
             <mj-column>
               <mj-image width="100px" src="logo.png" />
               <mj-divider border-color="#F45E43" />
