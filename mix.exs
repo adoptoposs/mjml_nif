@@ -41,7 +41,7 @@ defmodule Mjml.MixProject do
         "Responsive emails made easy. NIF bindings for the MJML Rust implementation (mrml)",
       maintainers: ["Paul Götze"],
       licenses: ["MIT"],
-      files: ~w(lib native .formatter.exs README* LICENSE* mix.exs checksum-*.exs),
+      files: ~w(lib native .formatter.exs CHANGELOG.md README* LICENSE* mix.exs checksum-*.exs),
       links: %{"GitHub" => @source_url}
     ]
   end
