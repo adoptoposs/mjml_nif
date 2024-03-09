@@ -10,6 +10,10 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ## [Unreleased]
 
+## [3.0.3] - 2024-03-09
+
+- Use [mrml] v3.0.4, which fixes applying mj-attributes inside mj-include tags and ensures fonts are rendered once (see https://github.com/jdrouet/mrml/issues/378, https://github.com/jdrouet/mrml/issues/383, [mrml diff v3.0.2..v3.0.4][mrml-v3.0.2-v3.0.4]).
+
 ## [3.0.2] - 2024-02-27
 
 - Use [mrml] v3.0.2, which fixes using comments in `<mj-head>` tags. (See https://github.com/jdrouet/mrml/issues/373, [mrml diff v3.0.1..v3.0.2][mrml-v3.0.1-v3.0.2]).
@@ -128,7 +132,8 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 ## [0.1.0] – 2020-07-19
 Initial release
 
-[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v3.0.2...HEAD
+[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v3.0.3...HEAD
+[3.0.3]: https://github.com/adoptoposs/mjml_nif/compare/v3.0.2...v3.0.3
 [3.0.2]: https://github.com/adoptoposs/mjml_nif/compare/v3.0.1...v3.0.2
 [3.0.1]: https://github.com/adoptoposs/mjml_nif/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/adoptoposs/mjml_nif/compare/v2.0.0...v3.0.0
@@ -153,6 +158,7 @@ Initial release
 [0.1.0]: https://github.com/adoptoposs/mjml_nif/compare/e77d33e9bcb58e0e2e9e522322d97ebdcb212618...v0.1.0
 [mrml]: https://github.com/jdrouet/mrml
 
+[mrml-v3.0.2-v3.0.4]: https://github.com/jdrouet/mrml/compare/mrml-v3.0.2...mrml-v3.0.4
 [mrml-v3.0.1-v3.0.2]: https://github.com/jdrouet/mrml/compare/mrml-v3.0.1...mrml-v3.0.2
 [mrml-v3.0.0-v3.0.1]: https://github.com/jdrouet/mrml/compare/mrml-v3.0.0...mrml-v3.0.1
 [mrml-v2.1.1-v3.0.0]: https://github.com/jdrouet/mrml/compare/mrml-v2.1.1...mrml-v3.0.0
