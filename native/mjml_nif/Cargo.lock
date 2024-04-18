@@ -22,6 +22,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "either"
+version = "1.11.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a47c1c47d2f5964e29c61246e81db715514cd532db6b5116a25ea3c03d6780a2"
+
+[[package]]
 name = "equivalent"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -51,6 +57,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "itertools"
+version = "0.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ba291022dbbd398a455acf126c1e341954079855bc60dfdda641363bd6922569"
+dependencies = [
+ "either",
+]
+
+[[package]]
 name = "lazy_static"
 version = "1.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -64,7 +79,7 @@ checksum = "308cc39be01b73d0d18f82a0e7b2a3df85245f84af96fdddc5d202d27e47b86a"
 
 [[package]]
 name = "mjml_nif"
-version = "3.0.3"
+version = "3.1.0"
 dependencies = [
  "mrml",
  "rustler",
@@ -72,11 +87,12 @@ dependencies = [
 
 [[package]]
 name = "mrml"
-version = "3.0.4"
+version = "3.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "11090cceb14c2eaf9d10c1503937b3a53323f322c475f409c1e51a0d86949a8d"
+checksum = "ed4c5f1e193a156a026c7e899b45b70b1499d887260f66ee40de60be0619e103"
 dependencies = [
  "indexmap",
+ "itertools",
  "mrml-macros",
  "rustc-hash",
  "thiserror",
