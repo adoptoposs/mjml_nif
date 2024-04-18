@@ -2,7 +2,7 @@ defmodule Mjml.MixProject do
   use Mix.Project
 
   @source_url "https://github.com/adoptoposs/mjml_nif"
-  @version "3.0.3"
+  @version "3.1.0"
 
   def project do
     [
