@@ -10,6 +10,10 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ## [Unreleased]
 
+## [4.0.0] - 2024-06-18
+
+- Use [mrml] v4.0.0 which fixes a bug when using HEEx annotations and phoenix function components to generate MJML (see [mrml diff v3.1.5..v4.0.0][mrml-v3.1.5-v4.0.0])
+
 ## [3.1.0] - 2024-04-18
 
 - Use [mrml] v3.1.5 (see [mrml diff v3.0.4..v3.1.5][mrml-v3.0.4-v3.1.5])
