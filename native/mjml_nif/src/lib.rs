@@ -83,4 +83,4 @@ fn font_option<'a>(key: Term<'a>, value: Term<'a>) -> (String, Cow<'static, str>
     )
 }
 
-rustler::init!("Elixir.Mjml.Native", [to_html]);
+rustler::init!("Elixir.Mjml.Native");
