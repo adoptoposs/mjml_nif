@@ -10,9 +10,8 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ## [Unreleased]
 
-## [4.0.0] - 2024-06-18
-
-- Use [mrml] v4.0.0 which fixes a bug when using HEEx annotations and phoenix function components to generate MJML (see [mrml diff v3.1.5..v4.0.0][mrml-v3.1.5-v4.0.0])
+- Use [mrml] v4.0.1 which fixes a bug when using HEEx annotations and phoenix function components to generate MJML (see [mrml diff v3.1.5..v4.0.1][mrml-v3.1.5-v4.0.1])
+- Use rustler v0.33.0
 
 ## [3.1.0] - 2024-04-18
 
@@ -169,6 +168,7 @@ Initial release
 [0.1.0]: https://github.com/adoptoposs/mjml_nif/compare/e77d33e9bcb58e0e2e9e522322d97ebdcb212618...v0.1.0
 [mrml]: https://github.com/jdrouet/mrml
 
+[mrml-v3.1.5-v4.0.1]: https://github.com/jdrouet/mrml/compare/mrml-v3.1.5...mrml-v4.0.1
 [mrml-v3.0.4-v3.1.5]: https://github.com/jdrouet/mrml/compare/mrml-v3.0.4...mrml-v3.1.5
 [mrml-v3.0.2-v3.0.4]: https://github.com/jdrouet/mrml/compare/mrml-v3.0.2...mrml-v3.0.4
 [mrml-v3.0.1-v3.0.2]: https://github.com/jdrouet/mrml/compare/mrml-v3.0.1...mrml-v3.0.2
