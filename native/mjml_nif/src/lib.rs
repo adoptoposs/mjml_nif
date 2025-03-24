@@ -29,7 +29,7 @@ pub fn to_html<'a>(env: Env<'a>, mjml: String, render_options: RenderOptions) ->
                 fonts: fonts_option(render_options.fonts)
             };
 
-            return match root.render(&options) {
+            return match root.element.render(&options) {
                 Ok(content) => Ok((atoms::ok(), content).encode(env)),
                 Err(error) => Ok((atoms::error(), error.to_string()).encode(env)),
             };
