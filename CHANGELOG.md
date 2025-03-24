@@ -15,6 +15,7 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 ### Changed
 - Use [mrml] v5.0.0, which fixes some bugs, improves error handling and adds missing attributes for some elements (see their [release log](https://github.com/jdrouet/mrml/releases/tag/mrml-v5.0.0), also see [mrml diff v4.0.1..v5.0.0][mrml-v4.0.1-v5.0.0])
 - Use rustler v0.36.1
+- Use [Rustler Precompiled v0.8.2](https://github.com/philss/rustler_precompiled/blob/main/CHANGELOG.md#082---2024-09-27)
 
 ---
 
