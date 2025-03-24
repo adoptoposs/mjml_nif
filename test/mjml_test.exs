@@ -45,10 +45,10 @@ defmodule MjmlTest do
     assert String.starts_with?(message, "unexpected element")
 
     assert {:error, message} = Mjml.to_html("not MJML")
-    assert String.starts_with?(message, "unable to load included template")
+    assert String.starts_with?(message, "unable to parse next template in root template")
 
     assert {:error, message} = Mjml.to_html("<mjml><///invalid-element></mjml>")
-    assert String.starts_with?(message, "unable to load included template")
+    assert String.starts_with?(message, "unable to parse next template in root template")
   end
 
   describe "when passing options" do
