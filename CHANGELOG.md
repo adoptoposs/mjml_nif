@@ -10,6 +10,13 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ## [Unreleased]
 
+## [5.0.0] - 2025-03-24
+
+### Changed
+- Use [mrml] v5.0.0, which fixes some bugs, improves error handling and adds missing attributes for some elements (see their [release log](https://github.com/jdrouet/mrml/releases/tag/mrml-v5.0.0), also see [mrml diff v4.0.1..v5.0.0][mrml-v4.0.1-v5.0.0])
+- Use rustler v0.36.1
+
+---
 
 ## [4.0.0] - 2024-07-12
 
@@ -20,6 +27,7 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 ### Fixed
 - Forcing rustler build using application config (see [#151](https://github.com/adoptoposs/mjml_nif/issues/151))
 
+---
 
 ## [3.1.0] - 2024-04-18
 
@@ -50,6 +58,8 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 ### Changed
 - Use [mrml] v3.0.0, which fixes an issue with rendering not self-closing `<mj-font></mj-font>` tags. (See https://github.com/jdrouet/mrml/issues/356, [mrml diff v2.1.1..v3.0.0][mrml-v2.1.1-v3.0.0]).
 
+---
+
 ## [2.0.0] - 2023-12-16
 
 ### Changed
@@ -76,84 +86,115 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 - Use rustler_precompiled v0.5.4
 - Change `Mjml.to_html/1` to `Mjml.to_html/2` and allow passing rendering options `keep_comments` (defaults to `true`) & `social_icon_path`
 
+
 ## [1.3.5] - 2022-07-11
+
 ### Fixed
 - Add `aarch64-unknown-linux-musl` as precompiled target (see [#66](https://github.com/adoptoposs/mjml_nif/issues/66))
 
+
 ## [1.3.4] - 2022-07-01
+
 ### Fixed
 - Add Cross.toml in order to pass the NIF version to cross (see [philss/rustler_precompiled#23](https://github.com/philss/rustler_precompiled/issues/23))
 
+
 ## [1.3.3] - 2022-05-25
+
 ### Fixed
 - Use "orderedmap" feature of mrml to get consistent HTML output (see [jdrouet/mrml#215](https://github.com/jdrouet/mrml/pull/215))
 - Use [Rustler Precompiled v0.5.1](https://github.com/philss/rustler_precompiled/blob/main/CHANGELOG.md#051---2022-05-24)
 
 ## [1.3.2] - 2022-03-26
+
 ### Fixed
 - Use [mrml] v1.2.10, which fixes a bug with parsing other self-closing tags
 (see [mrml diff v1.2.9..v1.2.10][mrml-v1.2.9-v1.2.10]))
 
+
 ## [1.3.1] - 2022-03-25
+
 ### Fixed
 - Use [mrml] v1.2.9, which fixes a bug with parsing the self-closing `br` and `meta` tags
 (see [mrml diff v1.2.8..v1.2.9][mrml-v1.2.8-v1.2.9]))
 
+
 ## [1.3.0] - 2022-03-18
+
 ### Changed
 - Use [Rustler Precompiled](https://github.com/philss/rustler_precompiled): this allows to use the mjml NIF without the Rust compiler 🎉
 - Use [mrml] v1.2.8 (see [mrml diff v1.2.7..v1.2.8][mrml-v1.2.7-v1.2.8]))
 
+
 ## [1.2.0] - 2022-02-25
+
 ### Changed
 - Update rustler to v0.24 (drops support for OTP <22, requires Elixir ~> 1.11)
 
+
 ## [1.1.3] - 2022-02-16
+
 ### Changed
 - Update rustler to v0.23 (drops support for OTP 20)
 - Use [mrml] v1.2.7, which allows inner elements in mj-social-element & mj-navbar-link (see [mrml diff v1.2.5..v1.2.7][mrml-v1.2.5-v1.2.7])
 
+
 ## [1.1.2] - 2021-10-04
+
 ### Changed
 - Use [mrml] v1.2.5, which allows the `lang` attribute in the mjml tag and allows using `mj-raw` tags in `mj-head` (see [mrml diff v1.2.3..v1.2.5][mrml-v1.2.3-v1.2.5])
 
 ### Fixed
 - Misc doc changes ([#31](https://github.com/adoptoposs/mjml_nif/pull/31))
 
+
 ## [1.1.1] - 2021-06-01
+
 ### Fixed
 - Use [mrml] v1.2.3, which fixes a bug with ignored mj-class attributes (see [jdrouet/mrml #164](https://github.com/jdrouet/mrml/issues/164), [mrml diff v1.2.2..v1.2.3][mrml-v1.2.2-v1.2.3]))
 
+
 ## [1.1.0] - 2021-05-23
+
 ### Changed
 - Use [mrml] v1.2.2
 - Support OTP 24
 - mjml_nif crate type changed from "dylib" to "cdylib"
 
+
 ## [1.0.0] - 2021-04-07
+
 ### Changed
 - Use [mrml] v1.0.0
 - Pass on parsing/rendering error messages from mrml to the error tuple of `MJML.to_html/1`
 
+---
+
 ## [0.3.1] - 2021-02-23
+
 ### Fixed
 - Compilation on aarch64 MacOS
 
+
 ## [0.3.0] - 2021-02-02
+
 ### Changed
 - Use [mrml] v0.5.0
 
 ### Fixed
 - Warning about special link args for x86_64-apple-darwin target
 
+
 ## [0.2.0] – 2020-10-19
+
 ### Changed
 - Use [mrml] v0.3.3
 
 ## [0.1.0] – 2020-07-19
 Initial release
 
-[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v4.0.0...HEAD
+[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v5.0.0...HEAD
+[5.0.0]: https://github.com/adoptoposs/mjml_nif/compare/v4.0.0...v5.0.0
 [4.0.0]: https://github.com/adoptoposs/mjml_nif/compare/v3.1.0...v4.0.0
 [3.1.0]: https://github.com/adoptoposs/mjml_nif/compare/v3.0.3...v3.1.0
 [3.0.3]: https://github.com/adoptoposs/mjml_nif/compare/v3.0.2...v3.0.3
@@ -181,6 +222,7 @@ Initial release
 [0.1.0]: https://github.com/adoptoposs/mjml_nif/compare/e77d33e9bcb58e0e2e9e522322d97ebdcb212618...v0.1.0
 [mrml]: https://github.com/jdrouet/mrml
 
+[mrml-v4.0.1-v5.0.0]: https://github.com/jdrouet/mrml/compare/mrml-v4.0.1...mrml-v5.0.0
 [mrml-v3.1.5-v4.0.1]: https://github.com/jdrouet/mrml/compare/mrml-v3.1.5...mrml-v4.0.1
 [mrml-v3.0.4-v3.1.5]: https://github.com/jdrouet/mrml/compare/mrml-v3.0.4...mrml-v3.1.5
 [mrml-v3.0.2-v3.0.4]: https://github.com/jdrouet/mrml/compare/mrml-v3.0.2...mrml-v3.0.4

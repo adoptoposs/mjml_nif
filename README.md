@@ -16,7 +16,7 @@ The package can be installed by adding `mjml` to your list of dependencies in `m
 ```elixir
 def deps do
   [
-    {:mjml, "~> 4.0"}
+    {:mjml, "~> 5.0"}
   ]
 end
 ```
@@ -72,9 +72,9 @@ opts = [
 ## Contributing
 
 We encourage you to contribute to mjml_nif.
-Please check our [CONTRIBUTING.md](./CONTRIBUTING.md) guides for more information.
+Please check our [Contributing Guides](./CONTRIBUTING.md) for more information.
 
-This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to our [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md).
+This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to our [Code Of Conduct](./CODE_OF_CONDUCT.md).
 
 
 ## Copyright and License
