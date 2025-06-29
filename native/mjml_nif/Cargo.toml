@@ -1,6 +1,8 @@
 [package]
 name = "mjml_nif"
-version = "5.1.0"
+# TODO: when officially released:
+# version = "6.0.0"
+version = "6.0.0-pre"
 authors = ["Paul Götze"]
 edition = "2021"
 
@@ -11,7 +13,9 @@ crate-type = ["cdylib"]
 
 [dependencies]
 rustler = "0.36.2"
-mrml = { version = "5.0", default-features = false, features = ["parse", "render", "local-loader"] }
+# TODO: when officially released:
+# mrml = { version = "6.0", default-features = false, features = ["parse", "render", "local-loader"] }
+mrml = { git = "https://github.com/jdrouet/mrml", branch = "release-plz-2025-05-20T12-58-25Z", default-features = false, features = ["parse", "render", "local-loader"] }
 
 [features]
 default = ["nif_version_2_15"]

@@ -71,9 +71,9 @@ dependencies = [
 
 [[package]]
 name = "itertools"
-version = "0.13.0"
+version = "0.14.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "413ee7dfc52ee1a4949ceeb7dbc8a33f2d6c088194d9f922fb8318faf1f01186"
+checksum = "2b192c782037fadd9cfa75548310488aabdbf3d2da73885b31bd0abd03351285"
 dependencies = [
  "either",
 ]
@@ -90,7 +90,7 @@ dependencies = [
 
 [[package]]
 name = "mjml_nif"
-version = "5.1.0"
+version = "6.0.0-pre"
 dependencies = [
  "mrml",
  "rustler",
@@ -98,9 +98,8 @@ dependencies = [
 
 [[package]]
 name = "mrml"
-version = "5.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9daf3c183141de1d3d2db6f275536c70ebfb87b11ed4b0c709b1103d1c9d3ede"
+version = "6.0.0"
+source = "git+https://github.com/jdrouet/mrml?branch=release-plz-2025-05-20T12-58-25Z#35276756735d6b0a659eee52257cf072d563f1f2"
 dependencies = [
  "enum-as-inner",
  "htmlparser",
@@ -184,18 +183,18 @@ dependencies = [
 
 [[package]]
 name = "thiserror"
-version = "1.0.69"
+version = "2.0.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b6aaf5339b578ea85b50e080feb250a3e8ae8cfcdff9a461c9ec2904bc923f52"
+checksum = "567b8a2dae586314f7be2a752ec7474332959c6460e02bde30d702a66d488708"
 dependencies = [
  "thiserror-impl",
 ]
 
 [[package]]
 name = "thiserror-impl"
-version = "1.0.69"
+version = "2.0.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4fee6c4efc90059e10f81e6d42c60a18f76588c3d74cb83a0b242a2b6c7504c1"
+checksum = "7f7cf42b4507d8ea322120659672cf1b9dbb93f8f2d4ecfd6e51350ff5b17a1d"
 dependencies = [
  "proc-macro2",
  "quote",

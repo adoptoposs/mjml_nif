@@ -10,6 +10,14 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ## [Unreleased]
 
+## [6.0.0] - 2025-07-XX
+
+### Changed
+- Use [mrml] v6.0.0, which introduces API-breaking changes (see their [release log](https://github.com/jdrouet/mrml/releases/tag/mrml-v6.0.0, also see [mrml diff v5.0.0..v6.0.0][mrml-v5.0.0-v6.0.0]), enables conditional comments, updates resource handling, and fixes layout issues with mj-divider. It removes use of deprecated render options due to changes in mrml::prelude::render::Options.
+- Use rustler v0.36.2
+
+---
+
 ## [5.1.0] - 2025-06-30
 
 ### Changed
@@ -199,8 +207,7 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 ## [0.1.0] – 2020-07-19
 Initial release
 
-[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v5.1.0...HEAD
-[5.1.0]: https://github.com/adoptoposs/mjml_nif/compare/v5.0.0...v5.1.0
+[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v5.0.0...HEAD
 [5.0.0]: https://github.com/adoptoposs/mjml_nif/compare/v4.0.0...v5.0.0
 [4.0.0]: https://github.com/adoptoposs/mjml_nif/compare/v3.1.0...v4.0.0
 [3.1.0]: https://github.com/adoptoposs/mjml_nif/compare/v3.0.3...v3.1.0

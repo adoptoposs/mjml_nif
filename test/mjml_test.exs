@@ -152,6 +152,26 @@ defmodule MjmlTest do
       assert html =~ "Open Sans"
       assert html =~ "https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700"
     end
+
+    test "transpiles MJML with conditional comments" do
+      mjml = """
+        <mjml>
+          <mj-body>
+            <!-- comment -->
+            <mj-raw>
+              <!--[if mso]>
+                <p>This is a conditional comment for Outlook</p>
+              <![endif]-->
+            </mj-raw>
+          </mj-body>
+        </mjml>
+      """
+
+      assert {:ok, html} = Mjml.to_html(mjml, keep_comments: false)
+      refute html =~ "<!-- comment -->"
+      assert html =~ "<!--[if mso]>"
+      assert html =~ "<p>This is a conditional comment for Outlook</p>"
+    end
   end
 
   describe "with mj-includes" do
