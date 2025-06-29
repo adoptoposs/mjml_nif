@@ -13,7 +13,7 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 ## [6.0.0] - 2025-07-XX
 
 ### Changed
-- Use [mrml] v6.0.0, which introduces API-breaking changes (see their [release log](https://github.com/jdrouet/mrml/releases/tag/mrml-v6.0.0, also see [mrml diff v5.0.0..v6.0.0][mrml-v5.0.0-v6.0.0]), enables conditional comments, updates resource handling, and fixes layout issues with mj-divider. It removes use of deprecated render options due to changes in mrml::prelude::render::Options.
+- Use [mrml] v6.0.0, which enables conditional comments, updates resource handling and fixes layout issues with mj-divider (see their [release log](https://github.com/jdrouet/mrml/releases/tag/mrml-v6.0.0), also see [mrml diff v5.0.0..v6.0.0][mrml-v5.0.0-v6.0.0]).
 - Use rustler v0.36.2
 
 ---
