@@ -36,6 +36,6 @@ defmodule Mjml.Native do
          opts
        end)
 
-  def to_html(_mjml, _render_options), do: error()
+  def to_html(_mjml, _render_options, _parser_options), do: error()
   defp error(), do: :erlang.nif_error(:nif_not_loaded)
 end

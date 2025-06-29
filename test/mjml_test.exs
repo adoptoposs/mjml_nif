@@ -153,4 +153,87 @@ defmodule MjmlTest do
       assert html =~ "https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700"
     end
   end
+
+  describe "include_loader" do
+    test "fails loading with noop loader (default)" do
+      assert {:error, err} = Mjml.to_html(template_with_mj_include())
+      assert err =~ "unable to load included template"
+    end
+
+    test "succeeds loading with local loader" do
+      assert {:ok, html} = Mjml.to_html(template_with_mj_include(), include_loader: :local)
+      assert html =~ "This `partial.mjml` file should be included"
+    end
+
+    test "succeeds loading with local loader and a custom location" do
+      assert {:ok, html} =
+               Mjml.to_html(template_with_mj_include_subdir(),
+                 include_loader: :local,
+                 local_loader_path: File.cwd!() <> "/test/support"
+               )
+
+      assert html =~ "This `partial.mjml` file should be included"
+    end
+
+    test "fails loading with local loader and a custom location that is invalid" do
+      assert {:error, err} =
+               Mjml.to_html(template_with_mj_include_subdir(),
+                 include_loader: :local,
+                 local_loader_path: "/dev/null"
+               )
+
+      assert err =~ "unable to load included template"
+    end
+
+    test "fails loading without protocol 'file:///' in path attribute" do
+      mjml = """
+        <mjml>
+          <mj-body>
+            Local include example (w/o protocol file:///):
+            <mj-wrapper padding="0 0 0 0">
+
+              <mj-include path="./test/support/local-include.mjml" />
+            </mj-wrapper>
+          </mj-body>
+        </mjml>
+      """
+
+      assert {:error, err} = Mjml.to_html(mjml)
+      assert err =~ "unable to load included template"
+    end
+
+    # skipping to avoid showing the rust panic! message in the test output
+    @tag :skip
+    test "raises when using an invalid loader" do
+      assert_raise ErlangError,
+                   ~r/:nif_panicked/,
+                   fn -> Mjml.to_html("", include_loader: :invalid_loader) end
+    end
+
+    defp template_with_mj_include do
+      """
+      <mjml>
+        <mj-body>
+          Local include example:
+          <mj-wrapper padding="0 0 0 0">
+            <mj-include path="file:///./test/support/partial.mjml" />
+          </mj-wrapper>
+        </mj-body>
+      </mjml>
+      """
+    end
+
+    defp template_with_mj_include_subdir do
+      """
+      <mjml>
+        <mj-body>
+          Local include example:
+          <mj-wrapper padding="0 0 0 0">
+            <mj-include path="file:///./partial.mjml" />
+          </mj-wrapper>
+        </mj-body>
+      </mjml>
+      """
+    end
+  end
 end
