@@ -1,8 +1,12 @@
 use mrml;
+use mrml::prelude::parser;
+use mrml::prelude::parser::noop_loader::NoopIncludeLoader;
+use mrml::prelude::parser::local_loader::LocalIncludeLoader;
 use rustler::{Encoder, Env, NifStruct, NifResult, Term};
 use std::borrow::Cow;
 use std::borrow::Cow::Owned;
 use std::collections::HashMap;
+use std::path::PathBuf;
 
 mod atoms {
     rustler::atoms! {
@@ -19,9 +23,20 @@ pub struct RenderOptions <'a> {
     pub fonts: Option<HashMap<Term<'a>, Term<'a>>>
 }
 
+#[derive(NifStruct)]
+#[module = "Mjml.ParserOptions"]
+pub struct ParserOptions <'a> {
+    pub include_loader: Term<'a>,
+    pub local_loader_path: Option<String>
+}
+
 #[rustler::nif]
-pub fn to_html<'a>(env: Env<'a>, mjml: String, render_options: RenderOptions) -> NifResult<Term<'a>> {
-    return match mrml::parse(&mjml) {
+pub fn to_html<'a>(env: Env<'a>, mjml: String, render_options: RenderOptions, parser_options: ParserOptions) -> NifResult<Term<'a>> {
+    let parse_opts = parser::ParserOptions {
+        include_loader: include_loader_option(&parser_options),
+        ..parser::ParserOptions::default()
+    };
+    return match mrml::parse_with_options(&mjml, &parse_opts) {
         Ok(root) => {
             let options = mrml::prelude::render::RenderOptions{
                 disable_comments: !render_options.keep_comments,
@@ -81,6 +96,21 @@ fn font_option<'a>(key: Term<'a>, value: Term<'a>) -> (String, Cow<'static, str>
             )
         }
     )
+}
+
+fn include_loader_option<'a>(parser_options: &ParserOptions<'a>) -> Box<dyn parser::loader::IncludeLoader> {
+    match parser_options.include_loader.atom_to_string() {
+        Ok(loader) if loader == "noop" => Box::new(NoopIncludeLoader),
+        Ok(loader) if loader == "local" => {
+            let path = if let Some(path) = &parser_options.local_loader_path {
+                PathBuf::from(path)
+            } else {
+                PathBuf::default()
+            };
+            Box::new(LocalIncludeLoader::new(path))
+        }
+        _ => panic!("Invalid include_loader option. Use ':noop' or ':local'."),
+    }
 }
 
 rustler::init!("Elixir.Mjml.Native");

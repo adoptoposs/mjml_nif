@@ -10,6 +10,11 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ## [Unreleased]
 
+## [5.1.0] - 2025-06-29
+
+### Changed
+- Allow passing `ParserOptions` and using `LocalIncludeLoader` (`:local`) as well as specifying a custom location to load mjml files via `:local_loader_path`. `NoopIncludeLoader` (`:noop`) is the default loader (no breaking changes).
+
 ## [5.0.0] - 2025-03-24
 
 ### Changed
