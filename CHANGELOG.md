@@ -10,6 +10,14 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ## [Unreleased]
 
+## [6.0.0] - 2025-06-14
+
+### Changed
+- Use [mrml] v6.0.0, which introduces API-breaking changes (see their [release log](https://github.com/jdrouet/mrml/releases/tag/mrml-v6.0.0, also see [mrml diff v5.0.0..v6.0.0][mrml-v5.0.0-v6.0.0]), enables conditional comments, updates resource handling, and fixes layout issues with mj-divider. It removes use of deprecated render options due to changes in mrml::prelude::render::Options.
+- Use rustler v0.36.2
+
+---
+
 ## [5.0.0] - 2025-03-24
 
 ### Changed
@@ -195,6 +203,7 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 Initial release
 
 [Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v5.0.0...HEAD
+[6.0.0]: https://github.com/adoptoposs/mjml_nif/compare/v5.0.0...v6.0.0
 [5.0.0]: https://github.com/adoptoposs/mjml_nif/compare/v4.0.0...v5.0.0
 [4.0.0]: https://github.com/adoptoposs/mjml_nif/compare/v3.1.0...v4.0.0
 [3.1.0]: https://github.com/adoptoposs/mjml_nif/compare/v3.0.3...v3.1.0
@@ -223,6 +232,7 @@ Initial release
 [0.1.0]: https://github.com/adoptoposs/mjml_nif/compare/e77d33e9bcb58e0e2e9e522322d97ebdcb212618...v0.1.0
 [mrml]: https://github.com/jdrouet/mrml
 
+[mrml-v5.0.0-v6.0.0]: https://github.com/jdrouet/mrml/compare/mrml-v5.0.0...mrml-v6.0.0
 [mrml-v4.0.1-v5.0.0]: https://github.com/jdrouet/mrml/compare/mrml-v4.0.1...mrml-v5.0.0
 [mrml-v3.1.5-v4.0.1]: https://github.com/jdrouet/mrml/compare/mrml-v3.1.5...mrml-v4.0.1
 [mrml-v3.0.4-v3.1.5]: https://github.com/jdrouet/mrml/compare/mrml-v3.0.4...mrml-v3.1.5
