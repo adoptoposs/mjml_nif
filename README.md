@@ -55,6 +55,13 @@ Available rendering options are:
   Defaults to `nil`, which will make the default font families available to
   be used (Open Sans, Droid Sans, Lato, Roboto, and Ubuntu).
 
+Available parsing options are:
+* `include_loader` - the loader to use for `mj-include` tags, accepting `:noop` or `:local`.
+   By default, it uses `:noop`, which means that `mj-include` tags will fail, returning an error
+   indicating that it is "unable to load included template".
+* `local_loader_path` - the root path to use for the `:local` include loader.
+   By default, it is not set (`nil`), using the current working directory as root path.
+
 ```elixir
 mjml = "<mjml>...</mjml>"
 
@@ -63,7 +70,9 @@ opts = [
   social_icon_path: "https://example.com/icons/",
   fonts: %{
       "Noto Color Emoji": "https://fonts.googleapis.com/css?family=Noto+Color+Emoji:400"
-  }
+  },
+  include_loader: :local,
+  local_loader_path: "/path/to/mjml/includes"
 ]
 
 {:ok, html} = Mjml.to_html(mjml, opts)

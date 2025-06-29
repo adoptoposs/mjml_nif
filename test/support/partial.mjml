@@ -1,0 +1,7 @@
+<mj-section>
+  <mj-column>
+    <mj-text>
+      <p>This `partial.mjml` file should be included in another Mjml template.</p>
+    </mj-text>
+  </mj-column>
+</mj-section>

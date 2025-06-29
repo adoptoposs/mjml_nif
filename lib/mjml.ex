@@ -11,7 +11,7 @@ defmodule Mjml do
   * `{:ok, html}` for a successful MJML transpiling
   * `{:error, message}` for a failed MJML transpiling
 
-  You can pass render options to customize the rendering of the final HTML:
+  You can pass the following options to customize the parsing of the MJML template and rendering of the final HTML:
 
   * `keep_comments` – when `false`, removes the comments from the rendered HTML.
     Defaults to `true`.
@@ -25,6 +25,13 @@ defmodule Mjml do
     (Note that only actually used fonts will show up!).
     Defaults to `nil`, which will make the default font families available to
     be used (Open Sans, Droid Sans, Lato, Roboto, and Ubuntu).
+
+  * `include_loader` - the loader to use for `mj-include` tags, accepting `:noop` or `:local`.
+    By default, it uses `:noop`, which means that `mj-include` tags will fail, returning an error
+    indicating that it is "unable to load included template".
+
+  * `local_loader_path` - the root path to use for the `:local` include loader.
+    By default, it is not set (`nil`), using the current working directory as root path.
 
   ## Examples
 
@@ -44,9 +51,21 @@ defmodule Mjml do
       iex> Mjml.to_html("<mjml><mj-head></mj-head></mjml>", opts)
       {:ok, "<!doctype html><html xmlns=..."}
 
+      iex> opts = [include_loader: :noop]
+      iex> Mjml.to_html("<mjml><mj-head><mj-include path="./partial.mjml"/></mj-head></mjml>", opts)
+      {:error, "unable to load include template ..."}
+
+      iex> opts = [include_loader: :local]
+      iex> Mjml.to_html("<mjml><mj-head><mj-include path="file:///./partial.mjml"/></mj-head></mjml>", opts)
+      {:ok, "<!doctype html><html xmlns=..."} # assuming `partial.mjml` exists in the current working directory
+
+      iex> opts = [include_loader: :local, local_loader_path: "/path/to/mjml/includes"]
+      iex> Mjml.to_html("<mjml><mj-head><mj-include path="file:///./partial.mjml"/></mj-head></mjml>", opts)
+      {:ok, "<!doctype html><html xmlns=..."} # assuming `partial.mjml` exists in the specified path
   """
   def to_html(mjml, opts \\ []) do
-    options = struct(Mjml.RenderOptions, opts)
-    Mjml.Native.to_html(mjml, options)
+    render_opts = struct(Mjml.RenderOptions, opts)
+    parser_opts = struct(Mjml.ParserOptions, opts)
+    Mjml.Native.to_html(mjml, render_opts, parser_opts)
   end
 end

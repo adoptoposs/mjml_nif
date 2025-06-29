@@ -1,6 +1,6 @@
 [package]
 name = "mjml_nif"
-version = "5.0.0"
+version = "5.1.0"
 authors = ["Paul Götze"]
 edition = "2021"
 
@@ -11,7 +11,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 rustler = "0.36.2"
-mrml = { version = "5.0", default-features = false, features = ["parse", "render"] }
+mrml = { version = "5.0", default-features = false, features = ["parse", "render", "local-loader"] }
 
 [features]
 default = ["nif_version_2_15"]
