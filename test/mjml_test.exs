@@ -185,6 +185,7 @@ defmodule MjmlTest do
       assert err =~ "unable to load included template"
     end
 
+    # TODO(https://github.com/adoptoposs/mjml_nif/pull/179): in mrml 6.0 it should succeed
     test "fails loading without protocol 'file:///' in path attribute" do
       mjml = """
         <mjml>
