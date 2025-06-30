@@ -10,10 +10,10 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ## [Unreleased]
 
-## [5.1.0] - 2025-06-29
+## [5.1.0] - 2025-06-30
 
 ### Changed
-- Allow passing `ParserOptions` and using `LocalIncludeLoader` (`:local`) as well as specifying a custom location to load mjml files via `:local_loader_path`. `NoopIncludeLoader` (`:noop`) is the default loader (no breaking changes).
+- Allow passing an `include_loader` option to `Mjml.to_html/2` and using `LocalIncludeLoader` as well as specifying a custom local directory to load included MJML files from.
 
 ## [5.0.0] - 2025-03-24
 
@@ -199,7 +199,8 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 ## [0.1.0] – 2020-07-19
 Initial release
 
-[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v5.0.0...HEAD
+[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v5.1.0...HEAD
+[5.1.0]: https://github.com/adoptoposs/mjml_nif/compare/v5.0.0...v5.1.0
 [5.0.0]: https://github.com/adoptoposs/mjml_nif/compare/v4.0.0...v5.0.0
 [4.0.0]: https://github.com/adoptoposs/mjml_nif/compare/v3.1.0...v4.0.0
 [3.1.0]: https://github.com/adoptoposs/mjml_nif/compare/v3.0.3...v3.1.0
