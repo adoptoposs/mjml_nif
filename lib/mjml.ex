@@ -26,12 +26,10 @@ defmodule Mjml do
     Defaults to `nil`, which will make the default font families available to
     be used (Open Sans, Droid Sans, Lato, Roboto, and Ubuntu).
 
-  * `include_loader` - the loader to use for `mj-include` tags, accepting `:noop` or `:local`.
-    By default, it uses `:noop`, which means that `mj-include` tags will fail, returning an error
-    indicating that it is "unable to load included template".
-
-  * `local_loader_path` - the root path to use for the `:local` include loader.
-    By default, it is not set (`nil`), using the current working directory as root path.
+  * `include_loader` - the loader to use for `mj-include` tags.
+    Currently, the only supported include loader is `Mjml.ParserOptions.LocalIncludeLoader`.
+    By default, there is no include loader configured, which means that transpiling MJML
+    templates with `mj-include` tags will fail with an error.
 
   ## Examples
 
@@ -51,21 +49,21 @@ defmodule Mjml do
       iex> Mjml.to_html("<mjml><mj-head></mj-head></mjml>", opts)
       {:ok, "<!doctype html><html xmlns=..."}
 
-      iex> opts = [include_loader: :noop]
-      iex> Mjml.to_html("<mjml><mj-head><mj-include path="./partial.mjml"/></mj-head></mjml>", opts)
+      iex> Mjml.to_html("<mjml><mj-head><mj-include path="./partial.mjml"/></mj-head></mjml>")
       {:error, "unable to load include template ..."}
 
-      iex> opts = [include_loader: :local]
+      iex> alias Mjml.ParserOptions.LocalIncludeLoader
+      iex> opts = [include_loader: %LocalIncludeLoader{}]
       iex> Mjml.to_html("<mjml><mj-head><mj-include path="file:///./partial.mjml"/></mj-head></mjml>", opts)
       {:ok, "<!doctype html><html xmlns=..."} # assuming `partial.mjml` exists in the current working directory
 
-      iex> opts = [include_loader: :local, local_loader_path: "/path/to/mjml/includes"]
-      iex> Mjml.to_html("<mjml><mj-head><mj-include path="file:///./partial.mjml"/></mj-head></mjml>", opts)
+      iex> opts = [include_loader: %LocalIncludeLoader{path: "/path/to/mjml/includes"}]
+      iex> Mjml.to_html("<mjml><mj-head><mj-include path="file:///partial.mjml"/></mj-head></mjml>", opts)
       {:ok, "<!doctype html><html xmlns=..."} # assuming `partial.mjml` exists in the specified path
   """
   def to_html(mjml, opts \\ []) do
     render_opts = struct(Mjml.RenderOptions, opts)
-    parser_opts = struct(Mjml.ParserOptions, opts)
+    parser_opts = Mjml.ParserOptions.new(opts)
     Mjml.Native.to_html(mjml, render_opts, parser_opts)
   end
 end

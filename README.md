@@ -56,13 +56,15 @@ Available rendering options are:
   be used (Open Sans, Droid Sans, Lato, Roboto, and Ubuntu).
 
 Available parsing options are:
-* `include_loader` - the loader to use for `mj-include` tags, accepting `:noop` or `:local`.
-   By default, it uses `:noop`, which means that `mj-include` tags will fail, returning an error
-   indicating that it is "unable to load included template".
-* `local_loader_path` - the root path to use for the `:local` include loader.
-   By default, it is not set (`nil`), using the current working directory as root path.
+* `include_loader` - the loader to use for `mj-include` tags.
+  By default, there is no include loader configured, which means that transpiling MJML templates with `mj-include` tags will fail with an error.
+  Currently, the only supported include loader is
+  `Mjml.ParserOptions.LocalIncludeLoader`. By default MJML includes are looked up from the currently working directory as the root directory. You can also define an optional custom `path` for the `LocalIncludeLoader` struct.
+
 
 ```elixir
+alias Mjml.ParserOptions.LocalIncludeLoader
+
 mjml = "<mjml>...</mjml>"
 
 opts = [
@@ -71,8 +73,7 @@ opts = [
   fonts: %{
       "Noto Color Emoji": "https://fonts.googleapis.com/css?family=Noto+Color+Emoji:400"
   },
-  include_loader: :local,
-  local_loader_path: "/path/to/mjml/includes"
+  include_loader: %LocalIncludeLoader{path: "/path/to/mjml/includes"}
 ]
 
 {:ok, html} = Mjml.to_html(mjml, opts)
