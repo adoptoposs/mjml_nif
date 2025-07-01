@@ -221,12 +221,12 @@ defmodule MjmlTest do
       assert message =~ "unable to load included template"
     end
 
-    # TODO(https://github.com/adoptoposs/mjml_nif/pull/179): in mrml 6.0 it should succeed
-    test "fails loading without protocol 'file:///' in path attribute" do
+    test "succeeds loading with local include loader without protocol 'file:///' in path attribute" do
       mjml = template_with_mj_include(path: "./test/support/partial.mjml")
+      include_loader = %LocalIncludeLoader{}
 
-      assert {:error, message} = Mjml.to_html(mjml)
-      assert message =~ "unable to load included template"
+      assert {:ok, html} = Mjml.to_html(mjml, include_loader: include_loader)
+      assert html =~ "This `partial.mjml` file should be included"
     end
 
     test "raises when using an invalid include_loader" do
