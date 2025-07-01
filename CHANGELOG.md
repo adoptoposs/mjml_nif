@@ -8,8 +8,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 For clarity, major releases of mjml_nif use the respective [mrml] releases with the same major release number.
 I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 1.x` versions use mrml versions `>= 1.0.0, < 2.0.0`, etc.
 
-## [Unreleased]
-
 ## [6.0.0] - 2025-07-XX
 
 ### Changed
@@ -207,7 +205,8 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 ## [0.1.0] – 2020-07-19
 Initial release
 
-[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v5.0.0...HEAD
+[6.0.0]: https://github.com/adoptoposs/mjml_nif/compare/v5.1.0...v6.0.0
+[5.1.0]: https://github.com/adoptoposs/mjml_nif/compare/v5.0.0...v5.1.0
 [5.0.0]: https://github.com/adoptoposs/mjml_nif/compare/v4.0.0...v5.0.0
 [4.0.0]: https://github.com/adoptoposs/mjml_nif/compare/v3.1.0...v4.0.0
 [3.1.0]: https://github.com/adoptoposs/mjml_nif/compare/v3.0.3...v3.1.0
@@ -236,6 +235,7 @@ Initial release
 [0.1.0]: https://github.com/adoptoposs/mjml_nif/compare/e77d33e9bcb58e0e2e9e522322d97ebdcb212618...v0.1.0
 [mrml]: https://github.com/jdrouet/mrml
 
+[mrml-v5.0.0-v6.0.0]: https://github.com/jdrouet/mrml/compare/mrml-v5.0.0...mrml-v6.0.0
 [mrml-v4.0.1-v5.0.0]: https://github.com/jdrouet/mrml/compare/mrml-v4.0.1...mrml-v5.0.0
 [mrml-v3.1.5-v4.0.1]: https://github.com/jdrouet/mrml/compare/mrml-v3.1.5...mrml-v4.0.1
 [mrml-v3.0.4-v3.1.5]: https://github.com/jdrouet/mrml/compare/mrml-v3.0.4...mrml-v3.1.5
