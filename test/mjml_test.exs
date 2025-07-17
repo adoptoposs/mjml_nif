@@ -214,5 +214,22 @@ defmodule MjmlTest do
                    "Unknown MJML include loader: :invalid_loader",
                    fn -> Mjml.to_html("", include_loader: :invalid_loader) end
     end
+
+    test "handles include loading with other options" do
+      mjml = template_with_mj_include(path: "file:///partial.mjml")
+
+      opts = [
+        keep_comments: false,
+        social_icon_path: "https://example.com/icons/",
+        fonts: %{
+          "My Font": "https://myfontserver.example.com/css?family=My+Font:300,400,500,700",
+          "Your Font": "https://yourfontserver.example.com/css?family=Your+Font:300,400,500,700"
+        },
+        include_loader: %LocalIncludeLoader{path: Path.expand("test/support")}
+      ]
+
+      assert {:ok, html} = Mjml.to_html(mjml, opts)
+      assert html =~ "This `partial.mjml` file should be included"
+    end
   end
 end

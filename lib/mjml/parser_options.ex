@@ -3,29 +3,23 @@ defmodule Mjml.ParserOptions do
 
   alias Mjml.ParserOptions.LocalIncludeLoader
 
-  @moduledoc """
-  Allows configuring a local path to load MJML templates that are included via
-  the `<mj-include>` tag.
+  def new(opts) do
+    include_loader = opts && opts[:include_loader]
 
-  ## Examples
-
-      iex> opts = [include_loader: %LocalIncludeLoader{}]
-      # will start looking for include templates from the current working directory
-
-      iex> opts = [include_loader: %LocalIncludeLoader{path: Path.expand("my/custom/path")}]
-      # # will start looking for include templates from the defined directory
-  """
-  defmodule LocalIncludeLoader do
-    defstruct path: nil
+    if include_loader do
+      build(include_loader: include_loader)
+    else
+      build(opts)
+    end
   end
 
-  def new(include_loader: %LocalIncludeLoader{path: path}) do
+  defp build(include_loader: %LocalIncludeLoader{path: path}) do
     %__MODULE__{include_loader: :local, args: [path]}
   end
 
-  def new(include_loader: include_loader) do
+  defp build(include_loader: include_loader) do
     raise "Unknown MJML include loader: #{inspect(include_loader)}"
   end
 
-  def new(_), do: %__MODULE__{}
+  defp build(_), do: %__MODULE__{}
 end
