@@ -10,6 +10,11 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ## [Unreleased]
 
+## [5.1.1] - 2025-07-17
+
+### Fixed
+- Error while passing include_loader along with other opts (see [#181](https://github.com/adoptoposs/mjml_nif/issues/181))
+
 ## [5.1.0] - 2025-06-30
 
 ### Changed
@@ -115,21 +120,21 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ### Fixed
 - Use [mrml] v1.2.10, which fixes a bug with parsing other self-closing tags
-(see [mrml diff v1.2.9..v1.2.10][mrml-v1.2.9-v1.2.10]))
+(see [mrml diff v1.2.9..v1.2.10][mrml-v1.2.9-v1.2.10])
 
 
 ## [1.3.1] - 2022-03-25
 
 ### Fixed
 - Use [mrml] v1.2.9, which fixes a bug with parsing the self-closing `br` and `meta` tags
-(see [mrml diff v1.2.8..v1.2.9][mrml-v1.2.8-v1.2.9]))
+(see [mrml diff v1.2.8..v1.2.9][mrml-v1.2.8-v1.2.9])
 
 
 ## [1.3.0] - 2022-03-18
 
 ### Changed
 - Use [Rustler Precompiled](https://github.com/philss/rustler_precompiled): this allows to use the mjml NIF without the Rust compiler 🎉
-- Use [mrml] v1.2.8 (see [mrml diff v1.2.7..v1.2.8][mrml-v1.2.7-v1.2.8]))
+- Use [mrml] v1.2.8 (see [mrml diff v1.2.7..v1.2.8][mrml-v1.2.7-v1.2.8])
 
 
 ## [1.2.0] - 2022-02-25
@@ -157,7 +162,7 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 ## [1.1.1] - 2021-06-01
 
 ### Fixed
-- Use [mrml] v1.2.3, which fixes a bug with ignored mj-class attributes (see [jdrouet/mrml #164](https://github.com/jdrouet/mrml/issues/164), [mrml diff v1.2.2..v1.2.3][mrml-v1.2.2-v1.2.3]))
+- Use [mrml] v1.2.3, which fixes a bug with ignored mj-class attributes (see [jdrouet/mrml #164](https://github.com/jdrouet/mrml/issues/164), [mrml diff v1.2.2..v1.2.3][mrml-v1.2.2-v1.2.3])
 
 
 ## [1.1.0] - 2021-05-23
@@ -199,7 +204,8 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 ## [0.1.0] – 2020-07-19
 Initial release
 
-[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v5.1.0...HEAD
+[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v5.1.1...HEAD
+[5.1.1]: https://github.com/adoptoposs/mjml_nif/compare/v5.1.0...v5.1.1
 [5.1.0]: https://github.com/adoptoposs/mjml_nif/compare/v5.0.0...v5.1.0
 [5.0.0]: https://github.com/adoptoposs/mjml_nif/compare/v4.0.0...v5.0.0
 [4.0.0]: https://github.com/adoptoposs/mjml_nif/compare/v3.1.0...v4.0.0
