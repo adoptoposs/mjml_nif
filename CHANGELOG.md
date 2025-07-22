@@ -10,6 +10,12 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ## [Unreleased]
 
+### Changed
+- Force local build if the user's target is not in the configured targets.
+  In this case there isn't a precompiled NIF available, so we now try to build
+  the NIF locally by default, instead of requiring to set the `:force_build`
+  config or `MJML_BUILD` environment variable.
+
 ## [5.1.1] - 2025-07-17
 
 ### Fixed

@@ -1,4 +1,6 @@
 defmodule Mjml.Native do
+  alias Mjml.Native.Precompiled
+
   mix_config = Mix.Project.config()
   version = mix_config[:version]
   github_url = mix_config[:package][:links]["GitHub"]
@@ -20,21 +22,15 @@ defmodule Mjml.Native do
     2.16
   )
 
-  opts = [
-    otp_app: :mjml,
-    crate: "mjml_nif",
-    base_url: "#{github_url}/releases/download/v#{version}",
-    version: version,
-    targets: targets,
-    nif_versions: nif_versions
-  ]
-
   use RustlerPrecompiled,
-      (if System.get_env("MJML_BUILD") in ["1", "true"] do
-         Keyword.put(opts, :force_build, true)
-       else
-         opts
-       end)
+      Precompiled.options(
+        otp_app: :mjml,
+        crate: "mjml_nif",
+        base_url: "#{github_url}/releases/download/v#{version}",
+        version: version,
+        targets: targets,
+        nif_versions: nif_versions
+      )
 
   def to_html(_mjml, _render_options, _parser_options), do: error()
   defp error(), do: :erlang.nif_error(:nif_not_loaded)
