@@ -1,4 +1,6 @@
 defmodule Mjml.Native.Precompiled do
+  @moduledoc false
+
   def options(opts) do
     if force?(Keyword.get(opts, :targets)) do
       Keyword.put(opts, :force_build, true)

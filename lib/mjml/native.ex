@@ -1,4 +1,6 @@
 defmodule Mjml.Native do
+  @moduledoc false
+
   alias Mjml.Native.Precompiled
 
   mix_config = Mix.Project.config()

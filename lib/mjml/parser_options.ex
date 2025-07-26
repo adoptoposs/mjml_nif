@@ -1,4 +1,6 @@
 defmodule Mjml.ParserOptions do
+  @moduledoc false
+
   defstruct include_loader: nil, args: []
 
   alias Mjml.ParserOptions.LocalIncludeLoader
