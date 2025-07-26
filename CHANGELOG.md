@@ -10,12 +10,15 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ## [Unreleased]
 
+## [5.2.0] - 2025-07-26
+
 ### Changed
 - Force local build if the runtime environment's target is not in the configured targets.
   In this case there isn't a precompiled NIF available, so we now try to build
   the NIF locally by default, instead of requiring to set the `:force_build`
   config or `MJML_BUILD` environment variable.
 - Add `x86_64-unknown-freebsd` and `arm-unknown-linux-gnueabihf` precompiled targets (the latter was removed in v2.0.0 and is now re-added)
+- Use [Rustler Precompiled v0.8.3](https://github.com/philss/rustler_precompiled/blob/main/CHANGELOG.md#083---2025-07-23)
 
 ## [5.1.1] - 2025-07-17
 
@@ -211,7 +214,8 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 ## [0.1.0] – 2020-07-19
 Initial release
 
-[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v5.1.1...HEAD
+[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v5.2.0...HEAD
+[5.2.0]: https://github.com/adoptoposs/mjml_nif/compare/v5.1.1...v5.2.0
 [5.1.1]: https://github.com/adoptoposs/mjml_nif/compare/v5.1.0...v5.1.1
 [5.1.0]: https://github.com/adoptoposs/mjml_nif/compare/v5.0.0...v5.1.0
 [5.0.0]: https://github.com/adoptoposs/mjml_nif/compare/v4.0.0...v5.0.0
