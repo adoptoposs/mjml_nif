@@ -22,11 +22,15 @@ jobs:
       # For compatibility between Elixir & Erlang/OTP see
       # https://hexdocs.pm/elixir/compatibility-and-deprecations.html#compatibility-between-elixir-and-erlang-otp
       matrix:
-        otp: [24.3, 25.3, 26.2, 27.0]
-        elixir: [1.14.5, 1.15.8, 1.16.3, 1.17.3, 1.18.3]
+        otp: [24.3, 25.3, 26.2, 27.0, 28.0]
+        elixir: [1.15.8, 1.16.3, 1.17.3, 1.18.4]
         exclude:
-          - otp: 27.0
-            elixir: 1.14.5
+          - otp: 28.0
+            elixir: 1.17.3
+          - otp: 28.0
+            elixir: 1.16.3
+          - otp: 28.0
+            elixir: 1.15.8
           - otp: 27.0
             elixir: 1.15.8
           - otp: 27.0
@@ -34,7 +38,7 @@ jobs:
           - otp: 24.3
             elixir: 1.17.3
           - otp: 24.3
-            elixir: 1.18.3
+            elixir: 1.18.4
 
     steps:
       - uses: actions/checkout@v5
