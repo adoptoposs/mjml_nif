@@ -10,6 +10,12 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ## [Unreleased]
 
+### Changed
+
+- Use rustler v0.37.1
+- Drop support for Elixir v1.14 and lower
+
+
 ## [5.2.0] - 2025-07-26
 
 ### Changed
