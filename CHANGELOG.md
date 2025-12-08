@@ -10,8 +10,13 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 ## [Unreleased]
 
+--
+
+## [5.3.0] - 2025-12-08
+
 ### Changed
 
+- Use [mrml] v5.1.0, which enables conditional comments, updates resource handling,fixes layout issues with mj-divider & mj-preview with comments ([#192](https://github.com/adoptoposs/mjml_nif/issues/192)) (see their [release log](https://github.com/jdrouet/mrml/releases/tag/mrml-v5.1.0), also see [mrml diff v5.0.0..v5.1.0][mrml-v5.0.0-v5.1.0]).
 - Use rustler v0.37.1
 - Drop support for Elixir v1.14 and lower
 
@@ -220,7 +225,9 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 ## [0.1.0] – 2020-07-19
 Initial release
 
-[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v5.2.0...HEAD
+[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v5.3.0...HEAD
+[5.3.0]: https://github.com/adoptoposs/mjml_nif/compare/v5.2.0...v5.3.0
+[5.2.0]: https://github.com/adoptoposs/mjml_nif/compare/v5.1.1...v5.2.0
 [5.2.0]: https://github.com/adoptoposs/mjml_nif/compare/v5.1.1...v5.2.0
 [5.1.1]: https://github.com/adoptoposs/mjml_nif/compare/v5.1.0...v5.1.1
 [5.1.0]: https://github.com/adoptoposs/mjml_nif/compare/v5.0.0...v5.1.0
@@ -252,6 +259,7 @@ Initial release
 [0.1.0]: https://github.com/adoptoposs/mjml_nif/compare/e77d33e9bcb58e0e2e9e522322d97ebdcb212618...v0.1.0
 [mrml]: https://github.com/jdrouet/mrml
 
+[mrml-v5.0.0-v5.1.0]: https://github.com/jdrouet/mrml/compare/mrml-v5.0.0...mrml-v5.1.0
 [mrml-v4.0.1-v5.0.0]: https://github.com/jdrouet/mrml/compare/mrml-v4.0.1...mrml-v5.0.0
 [mrml-v3.1.5-v4.0.1]: https://github.com/jdrouet/mrml/compare/mrml-v3.1.5...mrml-v4.0.1
 [mrml-v3.0.4-v3.1.5]: https://github.com/jdrouet/mrml/compare/mrml-v3.0.4...mrml-v3.1.5
