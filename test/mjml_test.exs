@@ -154,6 +154,26 @@ defmodule MjmlTest do
     end
   end
 
+  test "transpiles MJML with conditional comments" do
+    mjml = """
+      <mjml>
+        <mj-body>
+          <!-- comment -->
+          <mj-raw>
+            <!--[if mso]>
+              <p>This is a conditional comment for Outlook</p>
+            <![endif]-->
+          </mj-raw>
+        </mj-body>
+      </mjml>
+    """
+
+    assert {:ok, html} = Mjml.to_html(mjml, keep_comments: false)
+    refute html =~ "<!-- comment -->"
+    assert html =~ "<!--[if mso]>"
+    assert html =~ "<p>This is a conditional comment for Outlook</p>"
+  end
+
   describe "with mj-includes" do
     alias Mjml.ParserOptions.LocalIncludeLoader
 
@@ -201,12 +221,12 @@ defmodule MjmlTest do
       assert message =~ "unable to load included template"
     end
 
-    # TODO(https://github.com/adoptoposs/mjml_nif/pull/179): in mrml 6.0 it should succeed
-    test "fails loading without protocol 'file:///' in path attribute" do
+    test "succeeds loading with local include loader without protocol 'file:///' in path attribute" do
       mjml = template_with_mj_include(path: "./test/support/partial.mjml")
+      include_loader = %LocalIncludeLoader{}
 
-      assert {:error, message} = Mjml.to_html(mjml)
-      assert message =~ "unable to load included template"
+      assert {:ok, html} = Mjml.to_html(mjml, include_loader: include_loader)
+      assert html =~ "This `partial.mjml` file should be included"
     end
 
     test "raises when using an invalid include_loader" do
