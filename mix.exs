@@ -42,7 +42,8 @@ defmodule Mjml.MixProject do
       maintainers: ["Paul Götze"],
       licenses: ["MIT"],
       files: ~w(lib native .formatter.exs CHANGELOG.md README* LICENSE* mix.exs checksum-*.exs),
-      links: %{"GitHub" => @source_url}
+      links: %{"GitHub" => @source_url},
+      exclude_patterns: ["native/mjml_nif/target"]
     ]
   end
 
