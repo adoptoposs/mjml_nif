@@ -12,6 +12,18 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 --
 
+## [5.3.1] - 2026-02-13
+
+### Fixed
+
+- The precompiled NIF for the `x86_64-unknown-freebsd` target is now used ([#203](https://github.com/adoptoposs/mjml_nif/pull/203)). This partly reverts some not working changes made in v5.2.0 for automatically forcing a build for not available targets. I.e. it is still required to set the `:force_build`
+  config or the `MJML_BUILD` environment variable explicitly for not available precompile targets.
+
+### Changed
+
+- Use rustler v0.37.3
+
+
 ## [5.3.0] - 2025-12-08
 
 ### Changed
@@ -225,7 +237,8 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 ## [0.1.0] – 2020-07-19
 Initial release
 
-[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v5.3.0...HEAD
+[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v5.3.1...HEAD
+[5.3.1]: https://github.com/adoptoposs/mjml_nif/compare/v5.3.0...v5.3.1
 [5.3.0]: https://github.com/adoptoposs/mjml_nif/compare/v5.2.0...v5.3.0
 [5.2.0]: https://github.com/adoptoposs/mjml_nif/compare/v5.1.1...v5.2.0
 [5.2.0]: https://github.com/adoptoposs/mjml_nif/compare/v5.1.1...v5.2.0
