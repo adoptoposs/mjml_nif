@@ -64,7 +64,7 @@ jobs:
         project-dir: "native/mjml_nif"
 
     - name: Artifact upload
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: ${{ steps.build-crate.outputs.file-name }}
         path: ${{ steps.build-crate.outputs.file-path }}
