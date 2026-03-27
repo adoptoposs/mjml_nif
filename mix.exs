@@ -29,7 +29,7 @@ defmodule Mjml.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:rustler_precompiled, "~> 0.8.3"},
+      {:rustler_precompiled, "~> 0.9.0"},
       {:rustler, ">= 0.0.0", optional: true},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
