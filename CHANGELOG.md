@@ -12,6 +12,16 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 
 --
 
+## [6.0.0] - 2026-05-16
+
+## Changed
+
+- Use [mrml] v6.0.1, which adds CSS inlining support for mj-style with inline attribute, allows mj-include directly inside mjml, and provides some more fixes (see their [release log v6.0.0](https://github.com/jdrouet/mrml/releases/tag/mrml-v6.0.0) and [release log v6.0.1](https://github.com/jdrouet/mrml/releases/tag/mrml-v6.0.1), also see [mrml diff v5.1.0..v6.0.1][mrml-v5.1.0-v6.0.1]).
+- Use rustler v0.37.4
+- Use [Rustler Precompiled v0.9.0](https://github.com/philss/rustler_precompiled/blob/main/CHANGELOG.md#090---2026-03-26)
+
+There's no breaking changes on our side.
+
 ## [5.3.1] - 2026-02-13
 
 ### Fixed
@@ -237,7 +247,8 @@ I.e. `mjml_nif 0.x` versions use mrml versions `>= 0.1, < 1.0.0`, and `mjml_nif 
 ## [0.1.0] – 2020-07-19
 Initial release
 
-[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v5.3.1...HEAD
+[Unreleased]: https://github.com/adoptoposs/mjml_nif/compare/v6.0.0...HEAD
+[5.3.1]: https://github.com/adoptoposs/mjml_nif/compare/v5.3.1...v6.0.0
 [5.3.1]: https://github.com/adoptoposs/mjml_nif/compare/v5.3.0...v5.3.1
 [5.3.0]: https://github.com/adoptoposs/mjml_nif/compare/v5.2.0...v5.3.0
 [5.2.0]: https://github.com/adoptoposs/mjml_nif/compare/v5.1.1...v5.2.0
@@ -272,6 +283,7 @@ Initial release
 [0.1.0]: https://github.com/adoptoposs/mjml_nif/compare/e77d33e9bcb58e0e2e9e522322d97ebdcb212618...v0.1.0
 [mrml]: https://github.com/jdrouet/mrml
 
+[mrml-v5.1.0-v6.0.1]: https://github.com/jdrouet/mrml/compare/mrml-v5.1.0...mrml-v6.0.1
 [mrml-v5.0.0-v5.1.0]: https://github.com/jdrouet/mrml/compare/mrml-v5.0.0...mrml-v5.1.0
 [mrml-v4.0.1-v5.0.0]: https://github.com/jdrouet/mrml/compare/mrml-v4.0.1...mrml-v5.0.0
 [mrml-v3.1.5-v4.0.1]: https://github.com/jdrouet/mrml/compare/mrml-v3.1.5...mrml-v4.0.1
