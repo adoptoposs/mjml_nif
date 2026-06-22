@@ -41,7 +41,7 @@ jobs:
             elixir: 1.18.4
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - uses: dtolnay/rust-toolchain@stable
